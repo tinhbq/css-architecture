@@ -1,0 +1,114 @@
+/* Objects contain reusable structure only. No theme-specific colors live here. */
+
+.wrapper {
+  inline-size: min(calc(100% - 2rem), var(--wrapper));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--space-8);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--space-4);
+}
+
+.stack--xs { gap: var(--space-1); }
+.stack--sm { gap: var(--space-2); }
+.stack--lg { gap: var(--space-5); }
+.stack--xl { gap: var(--space-7); }
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.cluster--between {
+  justify-content: space-between;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.grid--hero {
+  grid-template-columns: minmax(0, 1.15fr) minmax(19rem, 0.85fr);
+  align-items: center;
+}
+
+.grid--heading {
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.7fr);
+  align-items: end;
+  gap: var(--space-7);
+}
+
+.grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.media {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.media__body {
+  flex: 1;
+  min-inline-size: 0;
+}
+
+.box {
+  padding: var(--space-5);
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 3.15rem;
+  padding-inline: var(--space-4);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.button:hover {
+  filter: brightness(0.94);
+  transform: translateY(-0.125rem);
+}
+
+@media (width < 52rem) {
+  .grid--hero,
+  .grid--heading,
+  .grid--three {
+    grid-template-columns: 1fr;
+  }
+
+  .grid--two {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding-block: var(--space-7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button { transition: none; }
+}

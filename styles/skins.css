@@ -1,0 +1,82 @@
+/* Skins control presentation only and can be swapped between objects. */
+
+.skin-surface {
+  border-color: var(--color-line);
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.skin-soft {
+  background: var(--color-soft);
+  color: var(--color-ink);
+}
+
+.skin-primary {
+  --check-color: var(--color-accent);
+  --text-muted: rgb(255 255 255 / 68%);
+
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: white;
+}
+
+.skin-dark {
+  --check-color: var(--color-accent);
+  --text-muted: rgb(255 255 255 / 68%);
+
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: white;
+}
+
+.skin-accent {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.skin-light {
+  border-color: white;
+  background: white;
+  color: var(--color-ink);
+}
+
+.skin-outline {
+  border-color: var(--color-line);
+  background: transparent;
+  color: var(--color-ink);
+}
+
+.skin-highlight {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.skin-ink-raised {
+  --text-muted: rgb(255 255 255 / 68%);
+
+  border-color: #3b3b42;
+  background: #232329;
+  color: white;
+}
+
+.skin-code {
+  border: 1px solid #414149;
+  background: #2c2c33;
+  color: var(--color-accent);
+}
+
+.skin-code-block {
+  border-color: #35353d;
+  background: var(--color-code);
+  color: white;
+}
+
+.shadow-card {
+  box-shadow: 0 1.25rem 3.5rem rgb(27 25 20 / 9%);
+}
+
+.shadow-float {
+  box-shadow: 0 1.5rem 4rem rgb(21 17 46 / 20%);
+}
+

@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Playground thực hành Object-Oriented CSS: reusable structure, swappable skin."
+    />
+    <title>OOCSS Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header wrapper cluster cluster--between">
+      <a class="brand cluster" href="#top" aria-label="Về đầu trang">
+        <span class="brand__mark" aria-hidden="true">O</span>
+        <span>OOCSS<span class="text-accent">.lab</span></span>
+      </a>
+
+      <nav aria-label="Điều hướng chính">
+        <ul class="nav-list cluster" role="list">
+          <li><a href="#principles">Nguyên tắc</a></li>
+          <li><a href="#objects">Objects</a></li>
+          <li><a href="#composition">Composition</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero wrapper section grid grid--hero">
+        <div class="stack stack--lg hero__content">
+          <p class="kicker cluster">
+            <span class="tag skin-highlight">Architecture 02</span>
+            Object-Oriented CSS
+          </p>
+          <h1>Build once.<br /><span class="text-accent">Compose anywhere.</span></h1>
+          <p class="lede">
+            Tạo các object cấu trúc nhỏ, kết hợp chúng với skin độc lập và tái sử
+            dụng ở mọi context mà không cần tăng specificity.
+          </p>
+          <div class="cluster">
+            <a class="button skin-primary" href="#composition">Xem composition</a>
+            <a class="button skin-outline" href="#objects">Khám phá objects</a>
+          </div>
+        </div>
+
+        <div class="composition-preview stack" aria-label="Minh họa OOCSS composition">
+          <p class="composition-preview__label">class composition</p>
+          <div class="composition-preview__card box skin-dark shadow-float rotate-left">
+            <div class="media">
+              <span class="avatar skin-primary" aria-hidden="true">Aa</span>
+              <div class="media__body stack stack--xs">
+                <strong>Structure</strong>
+                <span>box + media + stack</span>
+              </div>
+            </div>
+          </div>
+          <div class="composition-preview__card box skin-accent shadow-float rotate-right">
+            <div class="media">
+              <span class="avatar skin-light" aria-hidden="true">Bb</span>
+              <div class="media__body stack stack--xs">
+                <strong>Skin</strong>
+                <span>accent + light</span>
+              </div>
+            </div>
+          </div>
+          <div class="code-chip shadow-card">.box .skin-accent</div>
+        </div>
+      </section>
+
+      <section class="section section--ink" id="principles">
+        <div class="wrapper stack stack--xl">
+          <header class="grid grid--heading">
+            <div class="stack stack--sm">
+              <p class="kicker text-accent">Hai nguyên tắc</p>
+              <h2>Tách để tái sử dụng.</h2>
+            </div>
+            <p class="lede lede--small">
+              OOCSS giảm code lặp bằng cách tìm những pattern chung và biến chúng
+              thành các object độc lập với nội dung lẫn vị trí sử dụng.
+            </p>
+          </header>
+
+          <div class="grid grid--two">
+            <article class="box skin-ink-raised stack stack--lg">
+              <span class="principle-number">01</span>
+              <div class="stack stack--sm">
+                <h3>Structure ≠ Skin</h3>
+                <p>
+                  `.box` quản lý padding và radius. `.skin-accent` quản lý màu.
+                  Có thể đổi theme mà không viết lại cấu trúc.
+                </p>
+              </div>
+              <div class="cluster">
+                <span class="tag skin-code">.box</span>
+                <span class="operator">+</span>
+                <span class="tag skin-code">.skin-accent</span>
+              </div>
+            </article>
+
+            <article class="box skin-ink-raised stack stack--lg">
+              <span class="principle-number">02</span>
+              <div class="stack stack--sm">
+                <h3>Container ≠ Content</h3>
+                <p>
+                  `.media` hoạt động trong hero, card hay sidebar. Không cần các
+                  selector gắn chặt như `.sidebar .media`.
+                </p>
+              </div>
+              <div class="cluster">
+                <span class="tag skin-code">.media</span>
+                <span class="operator">→</span>
+                <span class="tag skin-code">any context</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrapper section stack stack--xl" id="objects">
+        <header class="grid grid--heading">
+          <div class="stack stack--sm">
+            <p class="kicker text-accent">Reusable objects</p>
+            <h2>Một vocabulary nhỏ.</h2>
+          </div>
+          <p class="lede lede--small">
+            Sáu object dưới đây giải quyết phần lớn nhu cầu layout của trang mà
+            không biết trước nội dung bên trong là gì.
+          </p>
+        </header>
+
+        <div class="grid grid--three">
+          <article class="object-card box skin-surface shadow-card stack">
+            <span class="object-card__icon skin-soft" aria-hidden="true">↕</span>
+            <div class="stack stack--xs">
+              <h3>Stack</h3>
+              <p>Vertical rhythm nhất quán.</p>
+            </div>
+            <code>.stack .stack--lg</code>
+          </article>
+
+          <article class="object-card box skin-surface shadow-card stack">
+            <span class="object-card__icon skin-soft" aria-hidden="true">↔</span>
+            <div class="stack stack--xs">
+              <h3>Cluster</h3>
+              <p>Nhóm item ngang, tự wrap.</p>
+            </div>
+            <code>.cluster</code>
+          </article>
+
+          <article class="object-card box skin-surface shadow-card stack">
+            <span class="object-card__icon skin-soft" aria-hidden="true">▦</span>
+            <div class="stack stack--xs">
+              <h3>Grid</h3>
+              <p>Cột responsive, không media query.</p>
+            </div>
+            <code>.grid .grid--three</code>
+          </article>
+
+          <article class="object-card box skin-surface shadow-card stack">
+            <span class="object-card__icon skin-soft" aria-hidden="true">◉</span>
+            <div class="stack stack--xs">
+              <h3>Media</h3>
+              <p>Icon hoặc ảnh đứng cạnh nội dung.</p>
+            </div>
+            <code>.media</code>
+          </article>
+
+          <article class="object-card box skin-surface shadow-card stack">
+            <span class="object-card__icon skin-soft" aria-hidden="true">□</span>
+            <div class="stack stack--xs">
+              <h3>Box</h3>
+              <p>Inset spacing và hình dạng chung.</p>
+            </div>
+            <code>.box</code>
+          </article>
+
+          <article class="object-card box skin-surface shadow-card stack">
+            <span class="object-card__icon skin-soft" aria-hidden="true">→</span>
+            <div class="stack stack--xs">
+              <h3>Button</h3>
+              <p>Hit area và tương tác cơ bản.</p>
+            </div>
+            <code>.button .skin-primary</code>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--soft" id="composition">
+        <div class="wrapper stack stack--xl">
+          <header class="grid grid--heading">
+            <div class="stack stack--sm">
+              <p class="kicker text-accent">Live composition</p>
+              <h2>Cùng object, khác skin.</h2>
+            </div>
+            <p class="lede lede--small">
+              Ba card dùng chung structure. Chỉ các skin class thay đổi để tạo
+              ba vai trò thị giác khác nhau.
+            </p>
+          </header>
+
+          <div class="grid grid--three">
+            <article class="box skin-surface shadow-card stack stack--lg">
+              <div class="media">
+                <span class="avatar skin-primary" aria-hidden="true">01</span>
+                <div class="media__body stack stack--xs">
+                  <h3>Starter</h3>
+                  <p>Cho side project nhỏ.</p>
+                </div>
+              </div>
+              <p><strong class="price">0₫</strong> / tháng</p>
+              <ul class="feature-list stack stack--sm" role="list">
+                <li>3 reusable objects</li>
+                <li>1 visual skin</li>
+                <li>Community support</li>
+              </ul>
+              <a class="button skin-outline u-full-width" href="#top">Bắt đầu</a>
+            </article>
+
+            <article class="box skin-primary shadow-card stack stack--lg">
+              <div class="media">
+                <span class="avatar skin-light" aria-hidden="true">02</span>
+                <div class="media__body stack stack--xs">
+                  <h3>Compose</h3>
+                  <p>Cho sản phẩm đang phát triển.</p>
+                </div>
+              </div>
+              <p><strong class="price">12$</strong> / tháng</p>
+              <ul class="feature-list stack stack--sm" role="list">
+                <li>Unlimited objects</li>
+                <li>Composable skins</li>
+                <li>Priority support</li>
+              </ul>
+              <a class="button skin-light u-full-width" href="#top">Chọn Compose</a>
+            </article>
+
+            <article class="box skin-dark shadow-card stack stack--lg">
+              <div class="media">
+                <span class="avatar skin-accent" aria-hidden="true">03</span>
+                <div class="media__body stack stack--xs">
+                  <h3>Scale</h3>
+                  <p>Cho design system lớn.</p>
+                </div>
+              </div>
+              <p><strong class="price">Custom</strong></p>
+              <ul class="feature-list stack stack--sm" role="list">
+                <li>Shared vocabulary</li>
+                <li>Custom design tokens</li>
+                <li>Architecture review</li>
+              </ul>
+              <a class="button skin-accent u-full-width" href="#top">Liên hệ</a>
+            </article>
+          </div>
+
+          <div class="code-example box skin-code-block shadow-card">
+            <pre><code><span class="syntax-muted">&lt;!-- Structure + skin + utility --&gt;</span>
+&lt;article class=<span class="syntax-accent">"box skin-primary shadow-card stack"</span>&gt;
+  &lt;div class=<span class="syntax-accent">"media"</span>&gt;...&lt;/div&gt;
+  &lt;a class=<span class="syntax-accent">"button skin-light u-full-width"</span>&gt;
+    Chọn Compose
+  &lt;/a&gt;
+&lt;/article&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer wrapper cluster cluster--between">
+      <p>Small objects. Clear responsibilities. Infinite compositions.</p>
+      <a href="#top">Về đầu trang ↑</a>
+    </footer>
+  </body>
+</html>
