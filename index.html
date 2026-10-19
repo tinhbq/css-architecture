@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Playground thực hành BEM Architecture: Block, Element và Modifier."
+    />
+    <title>BEM Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="#top" aria-label="Về đầu trang">
+          <span class="brand__mark" aria-hidden="true">B</span>
+          <span class="brand__name">BEM<span class="brand__suffix">.studio</span></span>
+        </a>
+
+        <nav class="site-nav" aria-label="Điều hướng chính">
+          <ul class="site-nav__list" role="list">
+            <li class="site-nav__item">
+              <a class="site-nav__link site-nav__link--active" href="#principles">Nguyên tắc</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="#anatomy">Anatomy</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="#demo">Demo</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <p class="hero__eyebrow">Architecture 03 · BEM methodology</p>
+            <h1 class="hero__title">
+              Name it.<br />Own it.<br /><span class="hero__accent">Reuse it.</span>
+            </h1>
+            <p class="hero__description">
+              Biến giao diện thành các block độc lập với tên class mô tả rõ quan
+              hệ, biến thể và phạm vi trách nhiệm.
+            </p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#anatomy">Giải phẫu một block</a>
+              <a class="button button--secondary" href="#demo">Xem component demo</a>
+            </div>
+          </div>
+
+          <div class="hero__visual bem-preview" aria-label="Cấu trúc tên class BEM">
+            <div class="bem-preview__grid" aria-hidden="true"></div>
+            <div class="bem-preview__token bem-preview__token--block">
+              <span class="bem-preview__label">Block</span>
+              <code class="bem-preview__code">.card</code>
+            </div>
+            <div class="bem-preview__connector" aria-hidden="true">+</div>
+            <div class="bem-preview__token bem-preview__token--element">
+              <span class="bem-preview__label">Element</span>
+              <code class="bem-preview__code">__title</code>
+            </div>
+            <div class="bem-preview__connector" aria-hidden="true">+</div>
+            <div class="bem-preview__token bem-preview__token--modifier">
+              <span class="bem-preview__label">Modifier</span>
+              <code class="bem-preview__code">--large</code>
+            </div>
+            <p class="bem-preview__result">.card__title--large</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section content-section--dark" id="principles">
+        <div class="content-section__inner">
+          <header class="section-heading section-heading--light">
+            <div class="section-heading__intro">
+              <p class="section-heading__eyebrow">01 · Core vocabulary</p>
+              <h2 class="section-heading__title">Ba khái niệm.<br />Một ngôn ngữ chung.</h2>
+            </div>
+            <p class="section-heading__description">
+              Nhìn vào tên class là biết component nào sở hữu style, phần tử đang
+              đóng vai trò gì và biến thể nào được áp dụng.
+            </p>
+          </header>
+
+          <div class="principle-grid">
+            <article class="principle-card principle-card--block">
+              <p class="principle-card__index">01</p>
+              <div class="principle-card__content">
+                <p class="principle-card__type">Block</p>
+                <h3 class="principle-card__title">Độc lập và tái sử dụng</h3>
+                <p class="principle-card__description">
+                  Một component có ý nghĩa riêng, không phụ thuộc nơi được đặt.
+                </p>
+              </div>
+              <code class="principle-card__code">.search-form</code>
+            </article>
+
+            <article class="principle-card principle-card--element">
+              <p class="principle-card__index">02</p>
+              <div class="principle-card__content">
+                <p class="principle-card__type">Element</p>
+                <h3 class="principle-card__title">Một phần của block</h3>
+                <p class="principle-card__description">
+                  Thành phần chỉ có ý nghĩa khi nằm trong block mà nó thuộc về.
+                </p>
+              </div>
+              <code class="principle-card__code">.search-form__input</code>
+            </article>
+
+            <article class="principle-card principle-card--modifier">
+              <p class="principle-card__index">03</p>
+              <div class="principle-card__content">
+                <p class="principle-card__type">Modifier</p>
+                <h3 class="principle-card__title">Biến thể hoặc trạng thái</h3>
+                <p class="principle-card__description">
+                  Điều chỉnh giao diện hoặc hành vi mà vẫn giữ nguyên component.
+                </p>
+              </div>
+              <code class="principle-card__code">.search-form--compact</code>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="anatomy">
+        <div class="content-section__inner">
+          <header class="section-heading">
+            <div class="section-heading__intro">
+              <p class="section-heading__eyebrow">02 · Component anatomy</p>
+              <h2 class="section-heading__title">Một block,<br />rõ từng trách nhiệm.</h2>
+            </div>
+            <p class="section-heading__description">
+              Mỗi class trỏ thẳng đến một phần của component. Không cần selector
+              dài để mô tả cấu trúc DOM.
+            </p>
+          </header>
+
+          <div class="bem-anatomy">
+            <article class="profile-card profile-card--featured">
+              <div class="profile-card__cover" aria-hidden="true"></div>
+              <div class="profile-card__body">
+                <div class="profile-card__avatar" aria-hidden="true">TN</div>
+                <span class="profile-card__badge">Featured mentor</span>
+                <h3 class="profile-card__name">Bùi Quốc Tĩnh</h3>
+                <p class="profile-card__role">Frontend Architect</p>
+                <p class="profile-card__bio">
+                  Xây design system có khả năng mở rộng và giúp team cùng nói một
+                  ngôn ngữ giao diện.
+                </p>
+                <a class="button button--primary button--block" href="#demo">Xem khóa học</a>
+              </div>
+            </article>
+
+            <div class="bem-anatomy__legend">
+              <div class="bem-anatomy__item bem-anatomy__item--block">
+                <span class="bem-anatomy__marker">B</span>
+                <div class="bem-anatomy__text">
+                  <strong class="bem-anatomy__name">Block</strong>
+                  <code class="bem-anatomy__code">.profile-card</code>
+                </div>
+              </div>
+              <div class="bem-anatomy__item bem-anatomy__item--element">
+                <span class="bem-anatomy__marker">E</span>
+                <div class="bem-anatomy__text">
+                  <strong class="bem-anatomy__name">Element</strong>
+                  <code class="bem-anatomy__code">.profile-card__avatar</code>
+                </div>
+              </div>
+              <div class="bem-anatomy__item bem-anatomy__item--modifier">
+                <span class="bem-anatomy__marker">M</span>
+                <div class="bem-anatomy__text">
+                  <strong class="bem-anatomy__name">Modifier</strong>
+                  <code class="bem-anatomy__code">.profile-card--featured</code>
+                </div>
+              </div>
+              <div class="bem-anatomy__rule">
+                <span class="bem-anatomy__rule-icon" aria-hidden="true">✓</span>
+                <p class="bem-anatomy__rule-text">
+                  Modifier luôn đi cùng class gốc, không thay thế class gốc.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section content-section--soft" id="demo">
+        <div class="content-section__inner">
+          <header class="section-heading">
+            <div class="section-heading__intro">
+              <p class="section-heading__eyebrow">03 · Modifier in action</p>
+              <h2 class="section-heading__title">Cùng một block.<br />Ba biến thể.</h2>
+            </div>
+            <p class="section-heading__description">
+              Structure và element giữ nguyên. Modifier thay đổi vai trò thị giác
+              mà không sao chép toàn bộ component.
+            </p>
+          </header>
+
+          <div class="course-grid">
+            <article class="course-card">
+              <div class="course-card__header">
+                <span class="course-card__badge">Foundation</span>
+                <span class="course-card__number">01</span>
+              </div>
+              <div class="course-card__content">
+                <p class="course-card__eyebrow">2 giờ · Cơ bản</p>
+                <h3 class="course-card__title">BEM Essentials</h3>
+                <p class="course-card__description">
+                  Học cách nhận diện block, element và modifier từ một giao diện.
+                </p>
+              </div>
+              <a class="course-card__action button button--secondary button--block" href="#top">Bắt đầu học</a>
+            </article>
+
+            <article class="course-card course-card--featured">
+              <div class="course-card__header">
+                <span class="course-card__badge course-card__badge--featured">Popular</span>
+                <span class="course-card__number">02</span>
+              </div>
+              <div class="course-card__content">
+                <p class="course-card__eyebrow">4 giờ · Trung cấp</p>
+                <h3 class="course-card__title">Scalable Components</h3>
+                <p class="course-card__description">
+                  Thiết kế component dễ mở rộng mà không làm specificity tăng dần.
+                </p>
+              </div>
+              <a class="course-card__action button button--light button--block" href="#top">Học ngay</a>
+            </article>
+
+            <article class="course-card course-card--dark">
+              <div class="course-card__header">
+                <span class="course-card__badge course-card__badge--dark">Advanced</span>
+                <span class="course-card__number">03</span>
+              </div>
+              <div class="course-card__content">
+                <p class="course-card__eyebrow">6 giờ · Nâng cao</p>
+                <h3 class="course-card__title">BEM at Scale</h3>
+                <p class="course-card__description">
+                  Tổ chức source, naming convention và ownership cho team lớn.
+                </p>
+              </div>
+              <a class="course-card__action button button--accent button--block" href="#top">Khám phá</a>
+            </article>
+          </div>
+
+          <div class="code-panel">
+            <div class="code-panel__header">
+              <div class="code-panel__dots" aria-hidden="true">
+                <span class="code-panel__dot code-panel__dot--red"></span>
+                <span class="code-panel__dot code-panel__dot--yellow"></span>
+                <span class="code-panel__dot code-panel__dot--green"></span>
+              </div>
+              <p class="code-panel__filename">course-card.html</p>
+            </div>
+            <pre class="code-panel__pre"><code class="code-panel__code"><span class="code-panel__comment">&lt;!-- Block + modifier --&gt;</span>
+&lt;article class=<span class="code-panel__value">"course-card course-card--featured"</span>&gt;
+  &lt;span class=<span class="code-panel__value">"course-card__badge"</span>&gt;Popular&lt;/span&gt;
+  &lt;h3 class=<span class="code-panel__value">"course-card__title"</span>&gt;
+    Scalable Components
+  &lt;/h3&gt;
+&lt;/article&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__text">Predictable names. Independent blocks. Confident changes.</p>
+        <a class="site-footer__link" href="#top">Về đầu trang ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

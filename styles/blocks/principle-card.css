@@ -1,0 +1,76 @@
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.principle-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-block-size: 24rem;
+  padding: var(--space-5);
+  border: 1px solid #3b3b40;
+  border-radius: var(--radius-lg);
+  background: #222226;
+}
+
+.principle-card--block {
+  border-block-start: 0.3rem solid var(--color-blue);
+}
+
+.principle-card--element {
+  border-block-start: 0.3rem solid var(--color-pink);
+}
+
+.principle-card--modifier {
+  border-block-start: 0.3rem solid var(--color-yellow);
+}
+
+.principle-card__index,
+.principle-card__type {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.principle-card__index {
+  color: #85828b;
+}
+
+.principle-card__type {
+  color: var(--color-pink);
+}
+
+.principle-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.principle-card__title {
+  color: white;
+  font-size: 1.35rem;
+}
+
+.principle-card__description {
+  color: #aaa7af;
+}
+
+.principle-card__code {
+  margin-block-start: auto;
+  color: var(--color-yellow);
+  font-size: 0.8rem;
+}
+
+@media (width < 56rem) {
+  .principle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .principle-card {
+    min-block-size: auto;
+  }
+}

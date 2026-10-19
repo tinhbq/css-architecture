@@ -1,0 +1,113 @@
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.course-card {
+  --course-card-eyebrow: var(--color-blue);
+  --course-card-muted: var(--color-muted);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-block-size: 29rem;
+  padding: var(--space-5);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.course-card--featured {
+  --course-card-eyebrow: rgb(255 255 255 / 68%);
+  --course-card-muted: rgb(255 255 255 / 68%);
+
+  border-color: var(--color-blue);
+  background: var(--color-blue);
+  color: white;
+  transform: translateY(-1rem);
+}
+
+.course-card--dark {
+  --course-card-eyebrow: var(--color-yellow);
+  --course-card-muted: rgb(255 255 255 / 68%);
+
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: white;
+}
+
+.course-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.course-card__badge {
+  padding: var(--space-1) var(--space-2);
+  border-radius: 999px;
+  background: var(--color-soft);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.course-card__badge--featured {
+  background: white;
+  color: var(--color-blue-dark);
+}
+
+.course-card__badge--dark {
+  background: var(--color-yellow);
+  color: var(--color-ink);
+}
+
+.course-card__number {
+  color: var(--course-card-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.course-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.course-card__eyebrow {
+  color: var(--course-card-eyebrow);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.course-card__title {
+  font-size: 1.65rem;
+}
+
+.course-card__description {
+  color: var(--course-card-muted);
+}
+
+.course-card__action {
+  margin-block-start: auto;
+}
+
+@media (width < 58rem) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card {
+    min-block-size: auto;
+  }
+
+  .course-card--featured {
+    transform: none;
+  }
+}

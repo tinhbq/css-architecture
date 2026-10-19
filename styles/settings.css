@@ -1,0 +1,31 @@
+:root {
+  --color-canvas: #f5f2eb;
+  --color-surface: #fffdf8;
+  --color-soft: #e9e5da;
+  --color-ink: #171719;
+  --color-muted: #6f6c72;
+  --color-line: #d9d4c9;
+  --color-blue: #315cff;
+  --color-blue-dark: #1737b6;
+  --color-pink: #ff4f93;
+  --color-yellow: #f4e85d;
+  --color-code: #202026;
+
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  --space-1: 0.375rem;
+  --space-2: 0.75rem;
+  --space-3: 1.125rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4.5rem;
+  --space-8: 7rem;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --content-width: 74rem;
+  --shadow-card: 0 1.5rem 4rem rgb(31 27 20 / 10%);
+}
