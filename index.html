@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Playground học CSS cơ bản và tổ chức cascade bằng CSS Layers."
+    />
+    <title>CSS cơ bản + Cascade Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Về đầu trang">
+        <span class="brand__mark" aria-hidden="true">C</span>
+        <span>cascade.lab</span>
+      </a>
+
+      <nav aria-label="Điều hướng chính">
+        <ul class="nav-list" role="list">
+          <li><a href="#foundations">Nền tảng</a></li>
+          <li><a href="#architecture">Kiến trúc</a></li>
+          <li><a href="#playground">Playground</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero__content">
+          <p class="eyebrow"><span aria-hidden="true">01</span> CSS foundations</p>
+          <h1>Kiểm soát <span class="text-accent">cascade</span>, thay vì chống lại nó.</h1>
+          <p class="hero__lede">
+            Một cấu trúc CSS dễ đoán bắt đầu từ nền tảng vững: box model,
+            inheritance, specificity và source order.
+          </p>
+          <div class="cluster">
+            <a class="button" href="#playground">Xem cascade hoạt động</a>
+            <a class="button button--secondary" href="#architecture">Khám phá kiến trúc</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-label="Minh họa các tầng CSS">
+          <div class="layer-card layer-card--one"><span>07</span> overrides</div>
+          <div class="layer-card layer-card--two"><span>06</span> utilities</div>
+          <div class="layer-card layer-card--three"><span>05</span> components</div>
+          <div class="layer-card layer-card--four"><span>01</span> reset</div>
+        </div>
+      </section>
+
+      <section class="section" id="foundations">
+        <div class="section-heading">
+          <p class="eyebrow"><span aria-hidden="true">02</span> Core concepts</p>
+          <h2>Bốn mảnh ghép CSS nền tảng</h2>
+          <p>Nắm chắc quy tắc trước khi thiết kế cách tổ chức chúng.</p>
+        </div>
+
+        <div class="concept-grid">
+          <article class="concept-card">
+            <span class="concept-card__number">01</span>
+            <h3>Box model</h3>
+            <p>Mọi element là một hộp gồm content, padding, border và margin.</p>
+            <code>box-sizing: border-box;</code>
+          </article>
+
+          <article class="concept-card">
+            <span class="concept-card__number">02</span>
+            <h3>Inheritance</h3>
+            <p>Một số thuộc tính như màu và font được truyền từ cha xuống con.</p>
+            <code>color: inherit;</code>
+          </article>
+
+          <article class="concept-card">
+            <span class="concept-card__number">03</span>
+            <h3>Specificity</h3>
+            <p>Selector càng cụ thể càng có khả năng thắng trong cùng một layer.</p>
+            <code>(inline, id, class, element)</code>
+          </article>
+
+          <article class="concept-card">
+            <span class="concept-card__number">04</span>
+            <h3>Source order</h3>
+            <p>Khi các điều kiện khác bằng nhau, khai báo xuất hiện sau sẽ thắng.</p>
+            <code>last declaration wins</code>
+          </article>
+        </div>
+      </section>
+
+      <section class="section architecture" id="architecture">
+        <div class="section-heading">
+          <p class="eyebrow"><span aria-hidden="true">03</span> Architecture</p>
+          <h2>Mỗi layer có một trách nhiệm</h2>
+          <p>Độ ưu tiên tăng dần từ trên xuống dưới.</p>
+        </div>
+
+        <ol class="layer-list">
+          <li><span>reset</span><p>Xóa khác biệt mặc định không mong muốn giữa các trình duyệt.</p></li>
+          <li><span>tokens</span><p>Lưu các quyết định thiết kế dùng chung dưới dạng custom properties.</p></li>
+          <li><span>base</span><p>Đặt style mặc định cho body, heading, link và các element khác.</p></li>
+          <li><span>layout</span><p>Quản lý luồng trang, container, grid và khoảng cách vùng.</p></li>
+          <li><span>components</span><p>Định nghĩa các khối giao diện độc lập và tái sử dụng được.</p></li>
+          <li><span>utilities</span><p>Cung cấp class đơn nhiệm để điều chỉnh nhanh một thuộc tính.</p></li>
+          <li><span>overrides</span><p>Xử lý ngoại lệ có phạm vi rõ ràng và được ghi chú.</p></li>
+        </ol>
+      </section>
+
+      <section class="section playground" id="playground">
+        <div class="section-heading">
+          <p class="eyebrow"><span aria-hidden="true">04</span> Live example</p>
+          <h2>Một class nhỏ có thể thắng selector dài</h2>
+        </div>
+
+        <div class="playground-grid">
+          <div class="demo-panel">
+            <p class="demo-panel__label">Kết quả</p>
+            <article class="notice-card u-border-accent">
+              <span class="badge">Cascade layer</span>
+              <h3>Utility thắng component</h3>
+              <p>
+                Component đặt border màu tím, nhưng utility
+                <code>.u-border-accent</code> đổi nó sang màu cam vì layer
+                <strong>utilities</strong> có ưu tiên cao hơn.
+              </p>
+              <button class="button" type="button">Một component button</button>
+            </article>
+          </div>
+
+          <div class="code-panel" aria-label="Đoạn mã CSS minh họa">
+            <div class="code-panel__bar">
+              <span></span><span></span><span></span>
+              <p>main.css</p>
+            </div>
+            <pre><code><span class="code-comment">/* Low-priority layer */</span>
+<span class="code-keyword">@layer</span> components {
+  <span class="code-selector">.playground .notice-card</span> {
+    border-color: <span class="code-value">var(--color-primary)</span>;
+  }
+}
+
+<span class="code-comment">/* Higher-priority layer */</span>
+<span class="code-keyword">@layer</span> utilities {
+  <span class="code-selector">.u-border-accent</span> {
+    border-color: <span class="code-value">var(--color-accent)</span>;
+  }
+}</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>CSS is a language of constraints, not a collection of patches.</p>
+      <a href="#top">Về đầu trang ↑</a>
+    </footer>
+  </body>
+</html>
