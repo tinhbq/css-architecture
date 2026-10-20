@@ -1,0 +1,37 @@
+/* State classes describe temporary or interactive conditions. */
+
+.site-nav__link.is-active {
+  color: var(--color-purple);
+}
+
+.dashboard-nav__link.is-active {
+  background: var(--theme-soft);
+  color: var(--theme-primary);
+}
+
+.status-dot.is-online {
+  background: #35bd72;
+  box-shadow: 0 0 0 0.2rem var(--dashboard-surface);
+}
+
+.stat-card__bar.is-current {
+  background: var(--theme-primary);
+}
+
+.tab.is-active {
+  background: var(--dashboard-surface);
+  color: var(--dashboard-text);
+  box-shadow: 0 0.2rem 0.6rem rgb(20 20 24 / 8%);
+}
+
+.activity-item.is-unread {
+  background: var(--theme-soft-transparent);
+}
+
+.activity-item.is-unread .activity-item__marker {
+  display: block;
+}
+
+.activity-item.is-disabled {
+  opacity: 0.48;
+}

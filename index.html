@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Playground SMACSS với Base, Layout, Module, State và Theme."
+    />
+    <title>SMACSS Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="l-container site-header__inner">
+        <a class="brand" href="#top" aria-label="Về đầu trang">
+          <span class="brand__mark" aria-hidden="true">S</span>
+          <span class="brand__name">SMACSS<span class="brand__accent">.system</span></span>
+        </a>
+
+        <nav class="site-nav" aria-label="Điều hướng chính">
+          <ul class="l-cluster site-nav__list" role="list">
+            <li><a class="site-nav__link is-active" href="#categories">Categories</a></li>
+            <li><a class="site-nav__link" href="#dashboard">Dashboard</a></li>
+            <li><a class="site-nav__link" href="#themes">Themes</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="l-section hero">
+        <div class="l-container l-grid l-grid--hero">
+          <div class="l-stack l-stack--large hero__content">
+            <p class="hero__eyebrow">Architecture 04 · SMACSS</p>
+            <h1 class="hero__title">Classify first.<br /><span class="hero__accent">Scale with clarity.</span></h1>
+            <p class="hero__description">
+              Chia CSS thành năm nhóm trách nhiệm rõ ràng để biết mỗi rule thuộc
+              về đâu, được phép làm gì và nên thay đổi như thế nào.
+            </p>
+            <div class="l-cluster hero__actions">
+              <a class="button button--primary" href="#categories">Khám phá 5 categories</a>
+              <a class="button button--secondary" href="#dashboard">Xem hệ thống hoạt động</a>
+            </div>
+          </div>
+
+          <div class="layer-stack" aria-label="Năm category của SMACSS">
+            <div class="layer-stack__item layer-stack__item--theme">
+              <span class="layer-stack__index">05</span>
+              <strong class="layer-stack__name">Theme</strong>
+              <code class="layer-stack__code">.theme-dark</code>
+            </div>
+            <div class="layer-stack__item layer-stack__item--state">
+              <span class="layer-stack__index">04</span>
+              <strong class="layer-stack__name">State</strong>
+              <code class="layer-stack__code">.is-active</code>
+            </div>
+            <div class="layer-stack__item layer-stack__item--module">
+              <span class="layer-stack__index">03</span>
+              <strong class="layer-stack__name">Module</strong>
+              <code class="layer-stack__code">.card</code>
+            </div>
+            <div class="layer-stack__item layer-stack__item--layout">
+              <span class="layer-stack__index">02</span>
+              <strong class="layer-stack__name">Layout</strong>
+              <code class="layer-stack__code">.l-grid</code>
+            </div>
+            <div class="layer-stack__item layer-stack__item--base">
+              <span class="layer-stack__index">01</span>
+              <strong class="layer-stack__name">Base</strong>
+              <code class="layer-stack__code">body, h1</code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="l-section section-dark" id="categories">
+        <div class="l-container l-stack l-stack--xlarge">
+          <header class="section-heading section-heading--light">
+            <div class="l-stack l-stack--small">
+              <p class="section-heading__eyebrow">01 · Five categories</p>
+              <h2 class="section-heading__title">Mỗi rule có một ngôi nhà.</h2>
+            </div>
+            <p class="section-heading__description">
+              Phân loại theo vai trò giúp giảm tranh chấp, tránh file “misc.css”
+              và làm cho quyết định kiến trúc trở nên nhất quán.
+            </p>
+          </header>
+
+          <div class="l-grid l-grid--categories">
+            <article class="category-card category-card--base">
+              <div class="category-card__header">
+                <span class="category-card__number">01</span>
+                <span class="category-card__tag">Foundation</span>
+              </div>
+              <div class="l-stack l-stack--small category-card__body">
+                <h3 class="category-card__title">Base</h3>
+                <p class="category-card__description">Element defaults, reset và typography nền.</p>
+              </div>
+              <code class="category-card__code">body { ... }</code>
+            </article>
+
+            <article class="category-card category-card--layout">
+              <div class="category-card__header">
+                <span class="category-card__number">02</span>
+                <span class="category-card__tag">Structure</span>
+              </div>
+              <div class="l-stack l-stack--small category-card__body">
+                <h3 class="category-card__title">Layout</h3>
+                <p class="category-card__description">Container, grid và các vùng lớn của trang.</p>
+              </div>
+              <code class="category-card__code">.l-grid { ... }</code>
+            </article>
+
+            <article class="category-card category-card--module">
+              <div class="category-card__header">
+                <span class="category-card__number">03</span>
+                <span class="category-card__tag">Component</span>
+              </div>
+              <div class="l-stack l-stack--small category-card__body">
+                <h3 class="category-card__title">Module</h3>
+                <p class="category-card__description">Khối giao diện độc lập và tái sử dụng.</p>
+              </div>
+              <code class="category-card__code">.card { ... }</code>
+            </article>
+
+            <article class="category-card category-card--state">
+              <div class="category-card__header">
+                <span class="category-card__number">04</span>
+                <span class="category-card__tag">Runtime</span>
+              </div>
+              <div class="l-stack l-stack--small category-card__body">
+                <h3 class="category-card__title">State</h3>
+                <p class="category-card__description">Trạng thái tương tác, tạm thời hoặc từ server.</p>
+              </div>
+              <code class="category-card__code">.is-active { ... }</code>
+            </article>
+
+            <article class="category-card category-card--theme">
+              <div class="category-card__header">
+                <span class="category-card__number">05</span>
+                <span class="category-card__tag">Identity</span>
+              </div>
+              <div class="l-stack l-stack--small category-card__body">
+                <h3 class="category-card__title">Theme</h3>
+                <p class="category-card__description">Màu sắc và nhận diện có thể hoán đổi.</p>
+              </div>
+              <code class="category-card__code">.theme-dark { ... }</code>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="l-section" id="dashboard">
+        <div class="l-container l-stack l-stack--xlarge">
+          <header class="section-heading">
+            <div class="l-stack l-stack--small">
+              <p class="section-heading__eyebrow">02 · System in action</p>
+              <h2 class="section-heading__title">Năm category.<br />Một giao diện.</h2>
+            </div>
+            <p class="section-heading__description">
+              Dashboard ghép layout và module; các class state mô phỏng dữ liệu
+              runtime; theme class cung cấp toàn bộ màu sắc.
+            </p>
+          </header>
+
+          <div class="dashboard theme-violet">
+            <aside class="l-sidebar dashboard__sidebar">
+              <div class="dashboard__identity">
+                <span class="dashboard__logo" aria-hidden="true">N</span>
+                <strong class="dashboard__brand">Northstar</strong>
+              </div>
+              <nav class="dashboard-nav" aria-label="Điều hướng dashboard demo">
+                <a class="dashboard-nav__link is-active" href="#dashboard">
+                  <span class="dashboard-nav__icon" aria-hidden="true">⌂</span>Overview
+                </a>
+                <a class="dashboard-nav__link" href="#dashboard">
+                  <span class="dashboard-nav__icon" aria-hidden="true">◎</span>Analytics
+                </a>
+                <a class="dashboard-nav__link" href="#dashboard">
+                  <span class="dashboard-nav__icon" aria-hidden="true">◇</span>Projects
+                </a>
+                <a class="dashboard-nav__link" href="#dashboard">
+                  <span class="dashboard-nav__icon" aria-hidden="true">⚙</span>Settings
+                </a>
+              </nav>
+              <div class="user-chip">
+                <span class="user-chip__avatar" aria-hidden="true">TN</span>
+                <span class="user-chip__body">
+                  <strong class="user-chip__name">Bùi Quốc Tĩnh</strong>
+                  <small class="user-chip__role">Administrator</small>
+                </span>
+                <span class="status-dot is-online" aria-label="Đang online"></span>
+              </div>
+            </aside>
+
+            <div class="l-main dashboard__main">
+              <div class="dashboard__topbar">
+                <div>
+                  <p class="dashboard__eyebrow">Monday, 19 October</p>
+                  <h3 class="dashboard__title">Good morning, Nam</h3>
+                </div>
+                <button class="button button--theme" type="button">+ New report</button>
+              </div>
+
+              <div class="l-grid l-grid--stats">
+                <article class="stat-card">
+                  <div class="stat-card__header">
+                    <span class="stat-card__label">Revenue</span>
+                    <span class="stat-card__trend stat-card__trend--up">+12.5%</span>
+                  </div>
+                  <strong class="stat-card__value">$84.2k</strong>
+                  <div class="stat-card__chart" aria-label="Biểu đồ doanh thu tăng">
+                    <span class="stat-card__bar" style="--bar-size: 35%"></span>
+                    <span class="stat-card__bar" style="--bar-size: 52%"></span>
+                    <span class="stat-card__bar" style="--bar-size: 42%"></span>
+                    <span class="stat-card__bar" style="--bar-size: 68%"></span>
+                    <span class="stat-card__bar" style="--bar-size: 82%"></span>
+                    <span class="stat-card__bar is-current" style="--bar-size: 100%"></span>
+                  </div>
+                </article>
+
+                <article class="stat-card">
+                  <div class="stat-card__header">
+                    <span class="stat-card__label">Conversion</span>
+                    <span class="stat-card__trend stat-card__trend--up">+4.2%</span>
+                  </div>
+                  <strong class="stat-card__value">18.6%</strong>
+                  <div class="progress">
+                    <span class="progress__value" style="--progress: 72%"></span>
+                  </div>
+                  <p class="stat-card__meta">72% của mục tiêu tháng</p>
+                </article>
+              </div>
+
+              <section class="activity">
+                <div class="activity__header">
+                  <div>
+                    <p class="activity__eyebrow">Live feed</p>
+                    <h3 class="activity__title">Recent activity</h3>
+                  </div>
+                  <div class="tabs" aria-label="Bộ lọc hoạt động">
+                    <button class="tab is-active" type="button">All</button>
+                    <button class="tab" type="button">Unread</button>
+                  </div>
+                </div>
+                <ul class="activity__list" role="list">
+                  <li class="activity-item is-unread">
+                    <span class="activity-item__icon activity-item__icon--blue" aria-hidden="true">↗</span>
+                    <span class="activity-item__body">
+                      <strong class="activity-item__title">Campaign published</strong>
+                      <span class="activity-item__meta">Summer Launch · 2 phút trước</span>
+                    </span>
+                    <span class="activity-item__marker" aria-label="Chưa đọc"></span>
+                  </li>
+                  <li class="activity-item">
+                    <span class="activity-item__icon activity-item__icon--green" aria-hidden="true">✓</span>
+                    <span class="activity-item__body">
+                      <strong class="activity-item__title">Milestone completed</strong>
+                      <span class="activity-item__meta">Website Redesign · 1 giờ trước</span>
+                    </span>
+                  </li>
+                  <li class="activity-item is-disabled">
+                    <span class="activity-item__icon activity-item__icon--gray" aria-hidden="true">–</span>
+                    <span class="activity-item__body">
+                      <strong class="activity-item__title">Integration paused</strong>
+                      <span class="activity-item__meta">Data Warehouse · hôm qua</span>
+                    </span>
+                  </li>
+                </ul>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="l-section section-soft" id="themes">
+        <div class="l-container l-stack l-stack--xlarge">
+          <header class="section-heading">
+            <div class="l-stack l-stack--small">
+              <p class="section-heading__eyebrow">03 · Theme category</p>
+              <h2 class="section-heading__title">Module không đổi.<br />Identity thay thế.</h2>
+            </div>
+            <p class="section-heading__description">
+              Theme chỉ cung cấp token. Module đọc các token đó nên không cần sao
+              chép hay override từng selector.
+            </p>
+          </header>
+
+          <div class="l-grid l-grid--themes">
+            <article class="theme-preview theme-violet">
+              <div class="theme-preview__header">
+                <span class="theme-preview__swatch"></span>
+                <code class="theme-preview__name">.theme-violet</code>
+              </div>
+              <div class="theme-preview__module">
+                <span class="theme-preview__icon" aria-hidden="true">V</span>
+                <div class="theme-preview__body">
+                  <strong class="theme-preview__title">Violet workspace</strong>
+                  <p class="theme-preview__text">Module dùng theme tokens.</p>
+                </div>
+                <button class="button button--theme button--small" type="button">Open</button>
+              </div>
+            </article>
+
+            <article class="theme-preview theme-forest">
+              <div class="theme-preview__header">
+                <span class="theme-preview__swatch"></span>
+                <code class="theme-preview__name">.theme-forest</code>
+              </div>
+              <div class="theme-preview__module">
+                <span class="theme-preview__icon" aria-hidden="true">F</span>
+                <div class="theme-preview__body">
+                  <strong class="theme-preview__title">Forest workspace</strong>
+                  <p class="theme-preview__text">Cùng HTML, theme khác.</p>
+                </div>
+                <button class="button button--theme button--small" type="button">Open</button>
+              </div>
+            </article>
+
+            <article class="theme-preview theme-sunset">
+              <div class="theme-preview__header">
+                <span class="theme-preview__swatch"></span>
+                <code class="theme-preview__name">.theme-sunset</code>
+              </div>
+              <div class="theme-preview__module">
+                <span class="theme-preview__icon" aria-hidden="true">S</span>
+                <div class="theme-preview__body">
+                  <strong class="theme-preview__title">Sunset workspace</strong>
+                  <p class="theme-preview__text">Không đổi module CSS.</p>
+                </div>
+                <button class="button button--theme button--small" type="button">Open</button>
+              </div>
+            </article>
+          </div>
+
+          <div class="code-panel">
+            <div class="code-panel__header">
+              <div class="code-panel__dots" aria-hidden="true">
+                <span class="code-panel__dot code-panel__dot--red"></span>
+                <span class="code-panel__dot code-panel__dot--yellow"></span>
+                <span class="code-panel__dot code-panel__dot--green"></span>
+              </div>
+              <p class="code-panel__filename">main.css</p>
+            </div>
+            <pre class="code-panel__pre"><code class="code-panel__code"><span class="code-panel__comment">/* Category order: general → specific */</span>
+@import <span class="code-panel__value">"base/base.css"</span>;
+@import <span class="code-panel__value">"layout/layout.css"</span>;
+@import <span class="code-panel__value">"modules/dashboard.css"</span>;
+@import <span class="code-panel__value">"state/state.css"</span>;
+@import <span class="code-panel__value">"theme/theme.css"</span>;</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="l-container site-footer__inner">
+        <p class="site-footer__text">Categorize responsibilities. Compose modules. Scale deliberately.</p>
+        <a class="site-footer__link" href="#top">Về đầu trang ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

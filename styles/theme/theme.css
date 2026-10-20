@@ -1,0 +1,37 @@
+/* Themes provide replaceable visual tokens. Modules consume these variables. */
+
+.theme-violet {
+  --theme-background: #f5f3fb;
+  --theme-surface: #ffffff;
+  --theme-text: #202027;
+  --theme-muted: #777382;
+  --theme-line: #dfdbe9;
+  --theme-primary: #6c4cff;
+  --theme-on-primary: #ffffff;
+  --theme-soft: #ece8ff;
+  --theme-soft-transparent: rgb(108 76 255 / 7%);
+}
+
+.theme-forest {
+  --theme-background: #edf3ed;
+  --theme-surface: #ffffff;
+  --theme-text: #18241b;
+  --theme-muted: #68756b;
+  --theme-line: #d4dfd5;
+  --theme-primary: #247447;
+  --theme-on-primary: #ffffff;
+  --theme-soft: #dff0e3;
+  --theme-soft-transparent: rgb(36 116 71 / 7%);
+}
+
+.theme-sunset {
+  --theme-background: #fff2eb;
+  --theme-surface: #ffffff;
+  --theme-text: #2b1d19;
+  --theme-muted: #806e68;
+  --theme-line: #ead7cf;
+  --theme-primary: #e6542f;
+  --theme-on-primary: #ffffff;
+  --theme-soft: #ffe1d5;
+  --theme-soft-transparent: rgb(230 84 47 / 7%);
+}
