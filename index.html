@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Playground ITCSS với bảy tầng từ Settings đến Utilities."
+    />
+    <title>ITCSS Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="c-site-header">
+      <div class="o-container c-site-header__inner">
+        <a class="c-brand" href="#top" aria-label="Về đầu trang">
+          <span class="c-brand__mark" aria-hidden="true">▽</span>
+          <span class="c-brand__name">ITCSS<span class="c-brand__accent">.atlas</span></span>
+        </a>
+
+        <nav class="c-site-nav" aria-label="Điều hướng chính">
+          <ul class="o-cluster c-site-nav__list" role="list">
+            <li><a class="c-site-nav__link" href="#triangle">Tam giác</a></li>
+            <li><a class="c-site-nav__link" href="#layers">Bảy tầng</a></li>
+            <li><a class="c-site-nav__link" href="#demo">Demo</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="c-hero">
+        <div class="o-container o-grid o-grid--split c-hero__inner">
+          <div class="o-stack o-stack--large c-hero__content">
+            <p class="c-hero__eyebrow">Architecture 05 · Inverted Triangle CSS</p>
+            <h1 class="c-hero__title">
+              Wide reach.<br />Low specificity.<br /><span class="u-color-accent">Clear direction.</span>
+            </h1>
+            <p class="c-hero__description">
+              Sắp xếp CSS theo phạm vi và độ cụ thể để cascade luôn chảy theo một
+              hướng có thể dự đoán.
+            </p>
+            <div class="o-cluster c-hero__actions">
+              <a class="c-button c-button--primary" href="#triangle">Hiểu tam giác đảo</a>
+              <a class="c-button c-button--ghost" href="#demo">Xem kiến trúc chạy</a>
+            </div>
+          </div>
+
+          <div class="c-triangle" aria-label="Mô hình tam giác đảo ITCSS">
+            <div class="c-triangle__axis c-triangle__axis--reach">
+              <span class="c-triangle__axis-label">Reach</span>
+              <span class="c-triangle__axis-value">broad → narrow</span>
+            </div>
+            <div class="c-triangle__shape">
+              <div class="c-triangle__layer c-triangle__layer--settings">Settings</div>
+              <div class="c-triangle__layer c-triangle__layer--tools">Tools</div>
+              <div class="c-triangle__layer c-triangle__layer--generic">Generic</div>
+              <div class="c-triangle__layer c-triangle__layer--elements">Elements</div>
+              <div class="c-triangle__layer c-triangle__layer--objects">Objects</div>
+              <div class="c-triangle__layer c-triangle__layer--components">Components</div>
+              <div class="c-triangle__layer c-triangle__layer--utilities">Utilities</div>
+            </div>
+            <div class="c-triangle__axis c-triangle__axis--specificity">
+              <span class="c-triangle__axis-label">Specificity</span>
+              <span class="c-triangle__axis-value">low → high</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="c-section c-section--dark" id="triangle">
+        <div class="o-container o-stack o-stack--xlarge">
+          <header class="o-split c-section-heading c-section-heading--light">
+            <div class="o-stack o-stack--small">
+              <p class="c-section-heading__eyebrow">01 · Direction of travel</p>
+              <h2 class="c-section-heading__title">Cascade chỉ chảy<br />theo một hướng.</h2>
+            </div>
+            <p class="c-section-heading__description">
+              Mỗi tầng chỉ nên phụ thuộc vào các quyết định tổng quát nằm phía
+              trên. Điều này ngăn generic rule vô tình thắng component cụ thể.
+            </p>
+          </header>
+
+          <div class="o-grid o-grid--three">
+            <article class="c-principle-card">
+              <span class="c-principle-card__icon" aria-hidden="true">↘</span>
+              <div class="o-stack o-stack--small">
+                <p class="c-principle-card__eyebrow">Reach</p>
+                <h3 class="c-principle-card__title">Rộng → Hẹp</h3>
+                <p class="c-principle-card__description">
+                  Reset ảnh hưởng toàn trang; utility chỉ xử lý một trường hợp.
+                </p>
+              </div>
+              <code class="c-principle-card__code">* → .u-hidden</code>
+            </article>
+
+            <article class="c-principle-card">
+              <span class="c-principle-card__icon" aria-hidden="true">↗</span>
+              <div class="o-stack o-stack--small">
+                <p class="c-principle-card__eyebrow">Explicitness</p>
+                <h3 class="c-principle-card__title">Chung → Cụ thể</h3>
+                <p class="c-principle-card__description">
+                  Element mô tả HTML; component và utility nói rõ ý định UI.
+                </p>
+              </div>
+              <code class="c-principle-card__code">button → .c-button</code>
+            </article>
+
+            <article class="c-principle-card">
+              <span class="c-principle-card__icon" aria-hidden="true">≋</span>
+              <div class="o-stack o-stack--small">
+                <p class="c-principle-card__eyebrow">Specificity</p>
+                <h3 class="c-principle-card__title">Thấp → Có kiểm soát</h3>
+                <p class="c-principle-card__description">
+                  Source order hỗ trợ override mà không tạo cuộc đua selector.
+                </p>
+              </div>
+              <code class="c-principle-card__code">0,0,1 → 0,1,0</code>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="c-section" id="layers">
+        <div class="o-container o-stack o-stack--xlarge">
+          <header class="o-split c-section-heading">
+            <div class="o-stack o-stack--small">
+              <p class="c-section-heading__eyebrow">02 · Layer map</p>
+              <h2 class="c-section-heading__title">Bảy tầng.<br />Bảy trách nhiệm.</h2>
+            </div>
+            <p class="c-section-heading__description">
+              Namespace và vị trí file cho biết một rule thuộc tầng nào trước khi
+              bạn cần mở stylesheet.
+            </p>
+          </header>
+
+          <ol class="c-layer-map" role="list">
+            <li class="c-layer-row c-layer-row--settings">
+              <span class="c-layer-row__number">01</span>
+              <div class="c-layer-row__identity">
+                <strong class="c-layer-row__name">Settings</strong>
+                <code class="c-layer-row__namespace">--token</code>
+              </div>
+              <p class="c-layer-row__description">Màu, spacing, font và các quyết định cấu hình.</p>
+              <code class="c-layer-row__example">--color-accent</code>
+            </li>
+            <li class="c-layer-row c-layer-row--tools">
+              <span class="c-layer-row__number">02</span>
+              <div class="c-layer-row__identity">
+                <strong class="c-layer-row__name">Tools</strong>
+                <code class="c-layer-row__namespace">@mixin</code>
+              </div>
+              <p class="c-layer-row__description">Mixin và function không phát sinh CSS trực tiếp.</p>
+              <code class="c-layer-row__example">fluid-type()</code>
+            </li>
+            <li class="c-layer-row c-layer-row--generic">
+              <span class="c-layer-row__number">03</span>
+              <div class="c-layer-row__identity">
+                <strong class="c-layer-row__name">Generic</strong>
+                <code class="c-layer-row__namespace">*</code>
+              </div>
+              <p class="c-layer-row__description">Reset, normalize và box-sizing toàn cục.</p>
+              <code class="c-layer-row__example">*::before</code>
+            </li>
+            <li class="c-layer-row c-layer-row--elements">
+              <span class="c-layer-row__number">04</span>
+              <div class="c-layer-row__identity">
+                <strong class="c-layer-row__name">Elements</strong>
+                <code class="c-layer-row__namespace">tag</code>
+              </div>
+              <p class="c-layer-row__description">Kiểu mặc định cho HTML element không có class.</p>
+              <code class="c-layer-row__example">h1, a</code>
+            </li>
+            <li class="c-layer-row c-layer-row--objects">
+              <span class="c-layer-row__number">05</span>
+              <div class="c-layer-row__identity">
+                <strong class="c-layer-row__name">Objects</strong>
+                <code class="c-layer-row__namespace">o-</code>
+              </div>
+              <p class="c-layer-row__description">Pattern layout cấu trúc, không mang skin.</p>
+              <code class="c-layer-row__example">.o-grid</code>
+            </li>
+            <li class="c-layer-row c-layer-row--components">
+              <span class="c-layer-row__number">06</span>
+              <div class="c-layer-row__identity">
+                <strong class="c-layer-row__name">Components</strong>
+                <code class="c-layer-row__namespace">c-</code>
+              </div>
+              <p class="c-layer-row__description">UI cụ thể, dễ nhận diện và tái sử dụng.</p>
+              <code class="c-layer-row__example">.c-card</code>
+            </li>
+            <li class="c-layer-row c-layer-row--utilities">
+              <span class="c-layer-row__number">07</span>
+              <div class="c-layer-row__identity">
+                <strong class="c-layer-row__name">Utilities</strong>
+                <code class="c-layer-row__namespace">u-</code>
+              </div>
+              <p class="c-layer-row__description">Helper đơn nhiệm, override có chủ đích.</p>
+              <code class="c-layer-row__example">.u-full-width</code>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="c-section c-section--soft" id="demo">
+        <div class="o-container o-stack o-stack--xlarge">
+          <header class="o-split c-section-heading">
+            <div class="o-stack o-stack--small">
+              <p class="c-section-heading__eyebrow">03 · Architecture in action</p>
+              <h2 class="c-section-heading__title">Từng tầng cùng làm việc.</h2>
+            </div>
+            <p class="c-section-heading__description">
+              Một release card kết hợp object layout, component skin, state và
+              utility mà mỗi layer vẫn giữ đúng trách nhiệm.
+            </p>
+          </header>
+
+          <div class="o-grid o-grid--two">
+            <div class="c-demo-stage">
+              <p class="c-demo-stage__label">Rendered component</p>
+              <article class="c-release-card">
+                <div class="o-media c-release-card__header">
+                  <span class="c-release-card__icon" aria-hidden="true">R5</span>
+                  <div class="o-media__body o-stack o-stack--tiny">
+                    <div class="o-cluster c-release-card__meta">
+                      <span class="c-badge c-badge--success">Ready</span>
+                      <span class="c-release-card__version">v5.2.0</span>
+                    </div>
+                    <h3 class="c-release-card__title">Design tokens rollout</h3>
+                  </div>
+                </div>
+
+                <p class="c-release-card__description">
+                  Đồng bộ color, spacing và typography tokens trên toàn bộ sản phẩm.
+                </p>
+
+                <ol class="c-progress-list" role="list">
+                  <li class="c-progress-list__item is-complete">
+                    <span class="c-progress-list__marker">✓</span>
+                    <span class="c-progress-list__label">Settings defined</span>
+                  </li>
+                  <li class="c-progress-list__item is-complete">
+                    <span class="c-progress-list__marker">✓</span>
+                    <span class="c-progress-list__label">Objects migrated</span>
+                  </li>
+                  <li class="c-progress-list__item is-current">
+                    <span class="c-progress-list__marker">3</span>
+                    <span class="c-progress-list__label">Components verified</span>
+                  </li>
+                  <li class="c-progress-list__item">
+                    <span class="c-progress-list__marker">4</span>
+                    <span class="c-progress-list__label">Utilities audited</span>
+                  </li>
+                </ol>
+
+                <div class="o-cluster c-release-card__actions">
+                  <a class="c-button c-button--primary u-full-width" href="#top">Review release</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="c-source-map">
+              <p class="c-source-map__label">Class ownership</p>
+              <div class="o-stack c-source-map__list">
+                <div class="o-media c-source-map__item">
+                  <span class="c-source-map__index c-source-map__index--object">O</span>
+                  <div class="o-media__body">
+                    <code class="c-source-map__class">.o-media</code>
+                    <p class="c-source-map__description">Object quản lý cấu trúc ngang.</p>
+                  </div>
+                </div>
+                <div class="o-media c-source-map__item">
+                  <span class="c-source-map__index c-source-map__index--component">C</span>
+                  <div class="o-media__body">
+                    <code class="c-source-map__class">.c-release-card</code>
+                    <p class="c-source-map__description">Component quản lý skin và nội dung.</p>
+                  </div>
+                </div>
+                <div class="o-media c-source-map__item">
+                  <span class="c-source-map__index c-source-map__index--state">S</span>
+                  <div class="o-media__body">
+                    <code class="c-source-map__class">.is-current</code>
+                    <p class="c-source-map__description">State phản ánh tiến trình runtime.</p>
+                  </div>
+                </div>
+                <div class="o-media c-source-map__item">
+                  <span class="c-source-map__index c-source-map__index--utility">U</span>
+                  <div class="o-media__body">
+                    <code class="c-source-map__class">.u-full-width</code>
+                    <p class="c-source-map__description">Utility điều chỉnh một thuộc tính.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="c-code-panel">
+            <div class="c-code-panel__header">
+              <div class="c-code-panel__dots" aria-hidden="true">
+                <span class="c-code-panel__dot c-code-panel__dot--red"></span>
+                <span class="c-code-panel__dot c-code-panel__dot--yellow"></span>
+                <span class="c-code-panel__dot c-code-panel__dot--green"></span>
+              </div>
+              <p class="c-code-panel__filename">styles/main.css</p>
+            </div>
+            <pre class="c-code-panel__pre"><code class="c-code-panel__code"><span class="c-code-panel__comment">/* Wide reach, low specificity */</span>
+@import <span class="c-code-panel__value">"03-generic/generic.css"</span>;
+@import <span class="c-code-panel__value">"04-elements/elements.css"</span>;
+@import <span class="c-code-panel__value">"05-objects/objects.css"</span>;
+@import <span class="c-code-panel__value">"06-components/architecture-demo.css"</span>;
+@import <span class="c-code-panel__value">"07-utilities/utilities.css"</span>;
+<span class="c-code-panel__comment">/* Narrow reach, explicit intent */</span></code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="c-site-footer">
+      <div class="o-container c-site-footer__inner">
+        <p class="c-site-footer__text">Organize by reach. Control specificity. Let the cascade flow.</p>
+        <a class="c-site-footer__link" href="#top">Về đầu trang ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

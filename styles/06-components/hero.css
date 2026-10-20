@@ -1,0 +1,157 @@
+.c-hero {
+  overflow: hidden;
+  background: var(--color-ink);
+  color: white;
+}
+
+.c-hero__inner {
+  min-block-size: calc(100vh - 5.5rem);
+  padding-block: var(--space-7);
+}
+
+.c-hero__content {
+  align-items: flex-start;
+}
+
+.c-hero__eyebrow {
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.c-hero__title {
+  font-size: clamp(3.3rem, 7.6vw, 7.2rem);
+  letter-spacing: -0.075em;
+}
+
+.c-hero__description {
+  max-inline-size: 43rem;
+  color: #aaa9b1;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.c-hero__actions {
+  gap: var(--space-2);
+}
+
+.c-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 3.15rem;
+  padding-inline: var(--space-4);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+.c-button:hover {
+  filter: brightness(0.94);
+  transform: translateY(-0.125rem);
+}
+
+.c-button--primary {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.c-button--ghost {
+  border-color: #45464d;
+  background: transparent;
+  color: white;
+}
+
+.c-triangle {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(17rem, 1fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+  min-block-size: 38rem;
+}
+
+.c-triangle__shape {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.c-triangle__layer {
+  display: grid;
+  place-items: center;
+  block-size: 3.25rem;
+  clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.c-triangle__layer--settings { inline-size: 100%; background: var(--color-pink); }
+.c-triangle__layer--tools { inline-size: 88%; background: var(--color-orange); }
+.c-triangle__layer--generic { inline-size: 76%; background: var(--color-accent); }
+.c-triangle__layer--elements { inline-size: 64%; background: var(--color-cyan); }
+.c-triangle__layer--objects { inline-size: 52%; background: #9b87ff; }
+.c-triangle__layer--components { inline-size: 40%; background: var(--color-violet); color: white; }
+.c-triangle__layer--utilities { inline-size: 28%; background: #4530b0; color: white; }
+
+.c-triangle__axis {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: #777780;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+.c-triangle__axis--reach {
+  justify-self: start;
+  transform: rotate(180deg);
+}
+
+.c-triangle__axis--specificity {
+  justify-self: end;
+}
+
+.c-triangle__axis-label {
+  font-weight: 500;
+}
+
+.c-triangle__axis-value {
+  color: #b2b1b8;
+}
+
+@media (width < 56rem) {
+  .c-triangle {
+    inline-size: min(100%, 34rem);
+    margin-inline: auto;
+  }
+}
+
+@media (width < 36rem) {
+  .c-triangle {
+    grid-template-columns: minmax(0, 1fr);
+    min-block-size: 31rem;
+  }
+
+  .c-triangle__axis {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .c-button {
+    transition: none;
+  }
+}

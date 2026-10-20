@@ -1,0 +1,7 @@
+/*
+ * Tools layer
+ *
+ * In a preprocessor project this file would expose mixins and functions without
+ * producing CSS output. This framework-free demo intentionally keeps the layer
+ * selector-free so nothing leaks into the cascade at this stage.
+ */

@@ -1,0 +1,33 @@
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}
+
+:focus-visible {
+  outline: 0.2rem solid var(--color-pink);
+  outline-offset: 0.25rem;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
