@@ -1,0 +1,5 @@
+.flow > * + * { margin-block-start: var(--flow-space, var(--space-m)); }
+.flow[data-space="2xs"] { --flow-space: var(--space-2xs); }
+.flow[data-space="small"] { --flow-space: var(--space-s); }
+.flow[data-space="large"] { --flow-space: var(--space-l); }
+.flow[data-space="xl"] { --flow-space: var(--space-xl); }

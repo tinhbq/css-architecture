@@ -1,0 +1,36 @@
+:root {
+  color-scheme: light;
+  --color-canvas: #f3f0e8;
+  --color-surface: #fffdf8;
+  --color-ink: #122b2d;
+  --color-ink-soft: #234044;
+  --color-muted: #667474;
+  --color-line: #d4d7cf;
+  --color-lime: #d7f45d;
+  --color-teal: #2a8c83;
+  --color-teal-soft: #d7f2ed;
+  --color-violet: #765ee8;
+  --color-violet-soft: #e9e4ff;
+  --color-coral: #f2775f;
+  --color-coral-soft: #ffe1da;
+  --color-blue: #6fc9ee;
+  --space-2xs: 0.35rem;
+  --space-xs: 0.65rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 5rem;
+  --space-3xl: 7rem;
+  --radius-s: 0.6rem;
+  --radius-m: 1rem;
+  --radius-l: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-round: 999px;
+  --shadow-s: 0 8px 24px rgb(18 43 45 / 0.08);
+  --shadow-m: 0 22px 55px rgb(18 43 45 / 0.15);
+  --measure: 42rem;
+  --wrapper: 73rem;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --transition: 170ms ease;
+}

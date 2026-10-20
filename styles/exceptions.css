@@ -1,0 +1,40 @@
+.button[data-variant="primary"] {
+  --button-bg: var(--color-ink);
+  --button-color: #fff;
+  --button-shadow: var(--shadow-s);
+}
+.button[data-variant="ghost"] {
+  --button-border: var(--color-line);
+  --button-bg: var(--color-surface);
+}
+
+.cube-face[data-face="composition"] { --face-bg: var(--color-blue); }
+.cube-face[data-face="utility"] { --face-bg: var(--color-lime); }
+.cube-face[data-face="block"] { --face-bg: var(--color-violet); --face-color: #fff; }
+.cube-face[data-face="exception"] { --face-bg: var(--color-coral); }
+
+.principle-card[data-kind="composition"] { --principle-accent: #2780a3; --principle-code-bg: #dff4fc; }
+.principle-card[data-kind="utility"] { --principle-accent: #647f00; --principle-code-bg: #effac2; }
+.principle-card[data-kind="block"] { --principle-accent: var(--color-violet); --principle-code-bg: var(--color-violet-soft); }
+.principle-card[data-kind="exception"] { --principle-accent: #b6422f; --principle-code-bg: var(--color-coral-soft); }
+
+.tag[data-tone="lime"] { --tag-bg: var(--color-lime); --tag-border: transparent; }
+.tag[data-tone="violet"] { --tag-bg: var(--color-violet-soft); --tag-color: var(--color-violet); --tag-border: transparent; }
+.tag[data-tone="coral"] { --tag-bg: var(--color-coral-soft); --tag-color: #a73a29; --tag-border: transparent; }
+
+.project-card[data-featured="true"] {
+  --project-bg: var(--color-lime);
+  --project-accent: var(--color-ink);
+  --project-track: rgb(18 43 45 / 0.16);
+  --project-shadow: 0 22px 55px rgb(215 244 93 / 0.12);
+}
+.project-card[data-state="active"] { --project-accent: var(--color-violet); }
+.project-card[data-state="review"] { --project-accent: var(--color-coral); }
+
+.switcher[data-layout="content-first"] > :first-child { order: 2; }
+.switcher[data-layout="content-first"] > :last-child { order: 1; }
+
+.legend i[data-color="composition"] { --legend-color: var(--color-blue); }
+.legend i[data-color="utility"] { --legend-color: var(--color-lime); }
+.legend i[data-color="block"] { --legend-color: var(--color-violet); }
+.legend i[data-color="exception"] { --legend-color: var(--color-coral); }

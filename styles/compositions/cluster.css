@@ -1,0 +1,16 @@
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cluster-space, var(--space-s));
+}
+
+.repel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--repel-space, var(--space-s));
+}
+
+.repel[data-nowrap="true"] { flex-wrap: nowrap; }

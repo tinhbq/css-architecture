@@ -1,0 +1,21 @@
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-space, var(--space-xl));
+  align-items: end;
+}
+
+.sidebar > :first-child { flex-basis: var(--sidebar-size, 32rem); flex-grow: 1; }
+.sidebar > :last-child { flex-basis: 0; flex-grow: 999; min-inline-size: min(100%, var(--sidebar-content-min, 22rem)); }
+
+.sidebar[data-side="right"] > :first-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: min(100%, var(--sidebar-content-min, 30rem));
+}
+
+.sidebar[data-side="right"] > :last-child {
+  flex-basis: var(--sidebar-size, 22rem);
+  flex-grow: 1;
+  min-inline-size: auto;
+}

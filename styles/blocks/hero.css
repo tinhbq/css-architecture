@@ -1,0 +1,86 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-block-end: 1px solid var(--color-line);
+}
+
+.hero::before {
+  position: absolute;
+  inset: 5% auto auto -8rem;
+  inline-size: 23rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-teal-soft);
+  filter: blur(1px);
+  content: "";
+}
+
+.tag {
+  --cluster-space: var(--space-xs);
+  width: fit-content;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--tag-border, var(--color-line));
+  border-radius: var(--radius-round);
+  color: var(--tag-color, var(--color-ink));
+  background: var(--tag-bg, var(--color-surface));
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.status-dot {
+  inline-size: 0.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-teal);
+  box-shadow: 0 0 0 0.3rem rgb(42 140 131 / 0.12);
+}
+
+.hero-visual {
+  position: relative;
+  min-block-size: 34rem;
+  padding: var(--space-l);
+  border-radius: var(--radius-xl);
+  background: var(--color-ink);
+  box-shadow: var(--shadow-m);
+  isolation: isolate;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.18;
+  background-image: linear-gradient(rgb(255 255 255 / 0.32) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / 0.32) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+}
+
+.cube-stage {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-s);
+  block-size: 100%;
+  align-content: center;
+  transform: rotate(2deg);
+}
+
+.cube-face {
+  --flow-space: var(--space-2xs);
+  min-block-size: 12rem;
+  padding: var(--space-m);
+  border-radius: var(--radius-l);
+  color: var(--face-color, var(--color-ink));
+  background: var(--face-bg, var(--color-surface));
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.28);
+}
+.cube-face strong { font-size: 1.15rem; }
+.cube-face small { color: currentcolor; opacity: 0.7; }
+.cube-letter { font-size: clamp(3.5rem, 8vw, 6rem); font-weight: 950; line-height: 1; }
+
+@media (max-width: 32rem) {
+  .cube-stage { grid-template-columns: 1fr; }
+  .cube-face { min-block-size: 8rem; }
+  .hero-visual { min-block-size: auto; }
+}

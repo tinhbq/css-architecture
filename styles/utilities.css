@@ -1,0 +1,18 @@
+.bg-ink { background: var(--color-ink); }
+.bg-surface { background: var(--color-surface); }
+.color-ink { color: var(--color-ink); }
+.color-white { color: #fff; }
+.color-muted { color: var(--color-muted); }
+.color-ink-muted { color: #a9b9b8; }
+.color-accent { color: var(--color-teal); }
+.color-lime { color: var(--color-lime); }
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-lg { font-size: clamp(1.05rem, 2vw, 1.2rem); line-height: 1.7; }
+.text-title { font-size: clamp(2.2rem, 5vw, 4.5rem); line-height: 1.02; letter-spacing: -0.05em; }
+.text-display { font-size: clamp(3rem, 7vw, 6.7rem); line-height: 0.92; letter-spacing: -0.065em; }
+.uppercase { text-transform: uppercase; }
+.tracking-wide { letter-spacing: 0.13em; }
+.no-underline { text-decoration: none; }
+.measure { max-inline-size: var(--measure); }
+.shadow { box-shadow: var(--shadow-m); }

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Playground minh họa CUBE CSS Architecture." />
+    <title>CUBE CSS Architecture</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body id="top">
+    <header class="site-header">
+      <div class="wrapper repel" data-nowrap="true">
+        <a class="brand cluster no-underline color-ink" href="#top">
+          <span class="brand-mark" aria-hidden="true">C</span>
+          <span class="flow" data-space="2xs">
+            <strong class="text-sm tracking-wide uppercase">CUBE CSS</strong>
+            <span class="text-xs color-muted">Pragmatic by design</span>
+          </span>
+        </a>
+        <nav aria-label="Điều hướng chính">
+          <ul class="nav-list cluster" role="list">
+            <li><a href="#model">Model</a></li>
+            <li><a href="#playground">Playground</a></li>
+            <li><a href="#source">Source</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero region">
+        <div class="wrapper switcher" data-threshold="wide">
+          <div class="flow measure" data-space="large">
+            <div class="tag cluster"><span class="status-dot" aria-hidden="true"></span><span>CSS that works with the cascade</span></div>
+            <div class="flow" data-space="small">
+              <h1 class="text-display">Compose broadly.<br /><span class="color-accent">Style locally.</span><br />Except deliberately.</h1>
+              <p class="text-lg color-muted">CUBE CSS cân bằng layout tái sử dụng, utility nhỏ gọn và block có identity — rồi dành exception cho những khác biệt thật sự.</p>
+            </div>
+            <div class="cluster">
+              <a class="button" data-variant="primary" href="#playground">Khám phá playground <span aria-hidden="true">↓</span></a>
+              <a class="button" data-variant="ghost" href="#model">Hiểu C–U–B–E</a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Minh họa bốn lớp CUBE CSS">
+            <div class="hero-grid" aria-hidden="true"></div>
+            <div class="cube-stage">
+              <div class="cube-face flow" data-face="composition"><span class="cube-letter">C</span><strong>Composition</strong><small>Layout & flow</small></div>
+              <div class="cube-face flow" data-face="utility"><span class="cube-letter">U</span><strong>Utility</strong><small>Single purpose</small></div>
+              <div class="cube-face flow" data-face="block"><span class="cube-letter">B</span><strong>Block</strong><small>Local identity</small></div>
+              <div class="cube-face flow" data-face="exception"><span class="cube-letter">E</span><strong>Exception</strong><small>Explicit deviation</small></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="model" class="region">
+        <div class="wrapper flow" data-space="xl">
+          <div class="sidebar" data-side="right">
+            <div class="flow measure" data-space="small">
+              <p class="eyebrow">01 · The model</p>
+              <h2 class="text-title">Four layers, one cooperative system.</h2>
+            </div>
+            <p class="text-lg color-muted">Mỗi lớp giải quyết một loại vấn đề. Chúng phối hợp thay vì cạnh tranh specificity.</p>
+          </div>
+
+          <div class="cube-key grid" data-layout="four">
+            <article class="principle-card flow" data-kind="composition">
+              <div class="repel" data-nowrap="true"><span class="principle-letter">C</span><span class="text-xs uppercase tracking-wide">Macro</span></div>
+              <div class="flow" data-space="2xs"><h3>Composition</h3><p class="color-muted">Quản lý flow, alignment và quan hệ không gian giữa các phần tử.</p></div>
+              <code>.grid · .flow · .sidebar</code>
+            </article>
+            <article class="principle-card flow" data-kind="utility">
+              <div class="repel" data-nowrap="true"><span class="principle-letter">U</span><span class="text-xs uppercase tracking-wide">Micro</span></div>
+              <div class="flow" data-space="2xs"><h3>Utility</h3><p class="color-muted">Áp dụng một quyết định nhỏ như màu, cỡ chữ hoặc shadow.</p></div>
+              <code>.color-muted · .shadow</code>
+            </article>
+            <article class="principle-card flow" data-kind="block">
+              <div class="repel" data-nowrap="true"><span class="principle-letter">B</span><span class="text-xs uppercase tracking-wide">Identity</span></div>
+              <div class="flow" data-space="2xs"><h3>Block</h3><p class="color-muted">Định nghĩa một phần giao diện có thể nhận ra và tái sử dụng.</p></div>
+              <code>.project-card · .button</code>
+            </article>
+            <article class="principle-card flow" data-kind="exception">
+              <div class="repel" data-nowrap="true"><span class="principle-letter">E</span><span class="text-xs uppercase tracking-wide">Deviation</span></div>
+              <div class="flow" data-space="2xs"><h3>Exception</h3><p class="color-muted">Biểu diễn biến thể hoặc trạng thái đặc biệt bằng data attribute.</p></div>
+              <code>[data-featured="true"]</code>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="playground" class="region bg-ink color-white">
+        <div class="wrapper flow" data-space="xl">
+          <div class="sidebar" data-side="right">
+            <div class="flow measure" data-space="small"><p class="eyebrow color-lime">02 · Playground</p><h2 class="text-title">A project board, assembled the CUBE way.</h2></div>
+            <p class="text-lg color-ink-muted">Composition tạo grid. Utility cung cấp nhịp và skin. Block giữ identity. Data attribute xử lý ngoại lệ.</p>
+          </div>
+
+          <div class="project-grid grid" data-layout="three">
+            <article class="project-card flow" data-featured="true">
+              <div class="repel" data-nowrap="true"><span class="tag" data-tone="lime">Featured</span><span class="project-number">01</span></div>
+              <div class="flow" data-space="small"><h3>Token migration</h3><p>Unify spacing and color decisions across twelve product surfaces.</p></div>
+              <div class="metric cluster"><strong>84%</strong><span>complete</span></div>
+              <div class="progress"><span style="--progress: 84%"></span></div>
+              <div class="repel"><span class="cluster avatar-stack" aria-label="3 collaborators"><span>AN</span><span>MK</span><span>JO</span></span><span class="text-sm">Due Fri</span></div>
+            </article>
+
+            <article class="project-card flow" data-state="active">
+              <div class="repel" data-nowrap="true"><span class="tag" data-tone="violet">In progress</span><span class="project-number">02</span></div>
+              <div class="flow" data-space="small"><h3>Layout primitives</h3><p>Replace page-specific grids with flexible compositions.</p></div>
+              <div class="metric cluster"><strong>62%</strong><span>complete</span></div>
+              <div class="progress"><span style="--progress: 62%"></span></div>
+              <div class="repel"><span class="cluster avatar-stack" aria-label="2 collaborators"><span>TH</span><span>LI</span></span><span class="text-sm">Due Mon</span></div>
+            </article>
+
+            <article class="project-card flow" data-state="review">
+              <div class="repel" data-nowrap="true"><span class="tag" data-tone="coral">Review</span><span class="project-number">03</span></div>
+              <div class="flow" data-space="small"><h3>Exception audit</h3><p>Turn hidden overrides into explicit, readable data hooks.</p></div>
+              <div class="metric cluster"><strong>91%</strong><span>complete</span></div>
+              <div class="progress"><span style="--progress: 91%"></span></div>
+              <div class="repel"><span class="cluster avatar-stack" aria-label="2 collaborators"><span>DV</span><span>QP</span></span><span class="text-sm">Today</span></div>
+            </article>
+          </div>
+
+          <div class="cluster legend"><span class="cluster"><i data-color="composition"></i>Composition</span><span class="cluster"><i data-color="utility"></i>Utility</span><span class="cluster"><i data-color="block"></i>Block</span><span class="cluster"><i data-color="exception"></i>Exception</span></div>
+        </div>
+      </section>
+
+      <section id="source" class="region">
+        <div class="wrapper switcher" data-threshold="wide" data-layout="content-first">
+          <div class="code-panel flow">
+            <div class="code-toolbar repel" data-nowrap="true"><span class="cluster"><i></i><i></i><i></i></span><span>project-card.html</span></div>
+            <pre><code>&lt;article
+  class="project-card flow"
+  data-featured="true"&gt;
+
+  &lt;div class="repel"&gt;...&lt;/div&gt;
+  &lt;div class="metric cluster"&gt;...&lt;/div&gt;
+
+&lt;/article&gt;</code></pre>
+          </div>
+          <div class="flow measure" data-space="large">
+            <p class="eyebrow">03 · Source anatomy</p>
+            <h2 class="text-title">The markup tells the whole story.</h2>
+            <p class="text-lg color-muted">Tên block cho biết identity. Composition mô tả layout. Utility bổ sung quyết định nhỏ. Exception hiển thị rõ biến thể đặc biệt.</p>
+            <ul class="check-list flow" role="list">
+              <li><span aria-hidden="true">✓</span> Không tạo selector theo vị trí</li>
+              <li><span aria-hidden="true">✓</span> Không tăng specificity để override</li>
+              <li><span aria-hidden="true">✓</span> Không giấu trạng thái trong class mơ hồ</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrapper repel"><p>CUBE CSS playground · Composition with intent.</p><a href="#top">Back to top ↑</a></div>
+    </footer>
+  </body>
+</html>

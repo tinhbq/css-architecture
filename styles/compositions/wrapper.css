@@ -1,0 +1,6 @@
+.wrapper {
+  width: min(calc(100% - (var(--gutter) * 2)), var(--wrapper));
+  margin-inline: auto;
+}
+
+.region { padding-block: clamp(var(--space-2xl), 9vw, var(--space-3xl)); }

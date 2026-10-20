@@ -1,0 +1,11 @@
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--switcher-space, var(--space-xl));
+}
+
+.switcher > * { flex-grow: 1; flex-basis: calc((var(--switcher-threshold, 48rem) - 100%) * 999); }
+.switcher > :nth-last-child(n + 3),
+.switcher > :nth-last-child(n + 3) ~ * { flex-basis: 100%; }
+.switcher[data-threshold="wide"] { --switcher-threshold: 54rem; }

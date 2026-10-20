@@ -1,0 +1,17 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 0.9rem 1.35rem;
+  border: 1px solid var(--button-border, transparent);
+  border-radius: var(--radius-round);
+  color: var(--button-color, var(--color-ink));
+  background: var(--button-bg, transparent);
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: var(--button-shadow, none);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.button:hover { transform: translateY(-0.15rem); }

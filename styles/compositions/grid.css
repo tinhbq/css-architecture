@@ -1,0 +1,8 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns, auto-fit), minmax(min(100%, var(--grid-min, 16rem)), 1fr));
+  gap: var(--grid-space, var(--space-m));
+}
+
+.grid[data-layout="three"] { --grid-min: 18rem; }
+.grid[data-layout="four"] { --grid-min: 14rem; }
