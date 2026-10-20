@@ -1,0 +1,26 @@
+.demoGrid { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: var(--space-6); align-items: center; }
+.scopeCard { display: grid; gap: var(--space-6); min-height: 28rem; padding: var(--space-8); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+.violetCard { color: #fff; background: var(--violet); transform: rotate(-1deg); }
+.limeCard { color: var(--ink); background: var(--lime); transform: rotate(1deg); }
+.meta { display: flex; justify-content: space-between; gap: var(--space-3); font-size: 0.72rem; font-weight: 800; }
+.meta code { padding: 0.3rem 0.5rem; border-radius: var(--radius-sm); background: rgb(255 255 255 / 0.18); }
+.avatar { display: grid; place-items: center; width: 7rem; aspect-ratio: 1; border-radius: 50%; color: var(--violet-dark); background: var(--violet-pale); font-size: 2rem; font-weight: 950; box-shadow: inset 0 0 0 0.5rem rgb(255 255 255 / 0.2); }
+.cardBody { display: grid; gap: var(--space-2); align-content: end; }
+.title { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1; letter-spacing: -0.045em; }
+.description { opacity: 0.72; line-height: 1.5; }
+.output { align-self: end; width: fit-content; padding: 0.45rem 0.65rem; border-radius: var(--radius-sm); background: rgb(255 255 255 / 0.18); font-family: "SFMono-Regular", Consolas, monospace; font-size: 0.7rem; }
+.connector { display: grid; place-items: center; gap: var(--space-2); color: var(--muted); text-align: center; }
+.connector span { display: grid; place-items: center; width: 3.5rem; aspect-ratio: 1; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); font-size: 1.5rem; font-weight: 900; }
+.connector small { font-weight: 800; }
+.chart { display: flex; align-items: end; gap: var(--space-2); height: 7rem; padding-bottom: var(--space-2); border-bottom: 2px solid rgb(20 33 38 / 0.2); }
+.chart i { flex: 1; border-radius: var(--radius-sm) var(--radius-sm) 0 0; background: var(--ink); }
+.chart i:nth-child(1) { height: 35%; opacity: 0.45; }
+.chart i:nth-child(2) { height: 58%; opacity: 0.58; }
+.chart i:nth-child(3) { height: 48%; opacity: 0.52; }
+.chart i:nth-child(4) { height: 76%; opacity: 0.76; }
+.chart i:nth-child(5) { height: 100%; }
+
+@media (max-width: 48rem) {
+  .demoGrid { grid-template-columns: 1fr; }
+  .connector { grid-template-columns: auto auto; justify-content: center; }
+}

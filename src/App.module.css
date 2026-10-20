@@ -1,0 +1,47 @@
+.appShell { min-height: 100vh; }
+
+.container {
+  width: min(calc(100% - 2rem), var(--container));
+  margin-inline: auto;
+}
+
+.section { padding-block: clamp(var(--space-16), 9vw, 7rem); }
+
+.sectionHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 0.6fr);
+  gap: var(--space-12);
+  align-items: end;
+  margin-block-end: var(--space-12);
+}
+
+.headingGroup { display: grid; gap: var(--space-4); }
+.eyebrow { color: var(--violet); font-size: 0.75rem; font-weight: 850; letter-spacing: 0.13em; text-transform: uppercase; }
+.sectionTitle { max-width: 46rem; font-size: clamp(2.25rem, 5vw, 4.6rem); line-height: 1; letter-spacing: -0.055em; }
+.sectionCopy { color: var(--muted); font-size: 1.08rem; line-height: 1.7; }
+
+.darkSection { color: #fff; background: var(--ink); }
+.lightEyebrow { color: var(--lime); }
+.mutedCopy { color: #adbbbf; }
+
+.sourceLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(24rem, 1.2fr);
+  gap: clamp(var(--space-8), 8vw, 6rem);
+  align-items: center;
+}
+
+.checkList { display: grid; gap: var(--space-3); color: var(--muted); list-style: none; line-height: 1.5; }
+
+.footer { padding-block: var(--space-8); border-top: 1px solid var(--line); color: var(--muted); background: var(--surface); font-size: 0.875rem; }
+.footerInner { display: flex; justify-content: space-between; gap: var(--space-4); }
+.footer a { color: var(--ink); font-weight: 800; text-underline-offset: 0.25rem; }
+
+@media (max-width: 48rem) {
+  .sectionHeader,
+  .sourceLayout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 36rem) {
+  .footerInner { flex-direction: column; }
+}
