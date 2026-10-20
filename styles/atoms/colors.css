@@ -1,0 +1,31 @@
+.bg-canvas { background-color: var(--color-canvas); }
+.bg-canvas-glass { background-color: rgb(245 243 236 / 0.84); }
+.bg-surface { background-color: var(--color-surface); }
+.bg-ink { background-color: var(--color-ink); }
+.bg-ink-soft { background-color: var(--color-ink-soft); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-accent-soft { background-color: var(--color-accent-soft); }
+.bg-accent-dark-soft { background-color: rgb(82 125 5 / 0.22); }
+.bg-violet { background-color: var(--color-violet); }
+.bg-violet-soft { background-color: var(--color-violet-soft); }
+.bg-violet-pale { background-color: var(--color-violet-pale); }
+.bg-coral { background-color: var(--color-coral); }
+.bg-coral-soft { background-color: var(--color-coral-soft); }
+.bg-gold { background-color: var(--color-gold); }
+.bg-white { background-color: #fff; }
+.bg-white-soft { background-color: rgb(255 255 255 / 0.2); }
+.bg-code { background-color: var(--color-ink); }
+.text-ink { color: var(--color-ink); }
+.text-ink-muted { color: #aeb9b4; }
+.text-muted { color: var(--color-muted); }
+.text-white { color: #fff; }
+.text-accent { color: var(--color-accent); }
+.text-accent-dark { color: var(--color-accent-dark); }
+.text-violet { color: var(--color-violet); }
+.text-violet-pale { color: var(--color-violet-pale); }
+.text-coral-dark { color: var(--color-coral-dark); }
+.text-code { color: var(--color-code); }
+.border-accent { border-color: var(--color-accent); }
+.border-violet { border-color: var(--color-violet); }
+.border-ink { border-color: var(--color-ink); }
+.border-ink-soft { border-color: var(--color-ink-soft); }

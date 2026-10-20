@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Playground Atomic CSS Architecture bằng các utility class đơn nhiệm." />
+    <title>Atomic CSS Architecture</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body class="min-h-screen bg-canvas text-ink antialiased">
+    <header class="sticky top-0 z-10 border-b bg-canvas-glass backdrop-blur">
+      <div class="container flex items-center justify-between gap-4 py-4">
+        <a class="inline-flex items-center gap-3 text-ink no-underline" href="#top">
+          <span class="flex size-10 items-center justify-center rounded-2 bg-accent font-black shadow-sm" aria-hidden="true">A</span>
+          <span class="grid gap-0"><strong class="text-sm tracking-wide">ATOMIC CSS</strong><span class="text-xs text-muted">Compose, don't invent</span></span>
+        </a>
+        <nav class="hidden items-center gap-1 sm:flex" aria-label="Điều hướng chính">
+          <a class="rounded-full px-4 py-2 text-sm font-semibold text-muted no-underline transition hover:bg-ink hover:text-white focus:ring" href="#principles">Principles</a>
+          <a class="rounded-full px-4 py-2 text-sm font-semibold text-muted no-underline transition hover:bg-ink hover:text-white focus:ring" href="#playground">Playground</a>
+          <a class="rounded-full px-4 py-2 text-sm font-semibold text-muted no-underline transition hover:bg-ink hover:text-white focus:ring" href="#workflow">Workflow</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="relative overflow-hidden border-b">
+        <div class="absolute inset-0 dot-grid opacity-40" aria-hidden="true"></div>
+        <div class="container relative grid items-center gap-12 py-16 md:grid-cols-2 md:py-24">
+          <div class="grid gap-7">
+            <div class="inline-flex w-fit items-center gap-2 rounded-full border border-accent bg-accent-soft px-3 py-2 text-xs font-bold uppercase tracking-wide">
+              <span class="size-2 rounded-full bg-accent pulse" aria-hidden="true"></span>One class · one job
+            </div>
+            <div class="grid gap-5">
+              <h1 class="max-w-xl text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">Build interfaces from <span class="text-accent-dark">small, stable atoms.</span></h1>
+              <p class="max-w-lg text-lg leading-relaxed text-muted">Thay vì đặt tên cho từng component, Atomic CSS ghép các utility đơn nhiệm ngay trong markup để tạo nên giao diện nhất quán.</p>
+            </div>
+            <div class="flex flex-col gap-3 sm:flex-row">
+              <a class="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 font-bold text-white no-underline shadow-md transition hover:lift focus:ring" href="#playground">Xem composition <span aria-hidden="true">↓</span></a>
+              <a class="inline-flex items-center justify-center rounded-full border bg-surface px-6 py-3 font-bold text-ink no-underline transition hover:border-accent focus:ring" href="#principles">Đọc nguyên tắc</a>
+            </div>
+          </div>
+
+          <div class="grid gap-3 rounded-4 border bg-ink p-4 shadow-lg rotate-soft md:p-6">
+            <div class="flex items-center justify-between px-2 py-1">
+              <span class="text-xs font-bold uppercase tracking-wide text-ink-muted">Atomic recipe</span>
+              <div class="flex gap-2" aria-hidden="true"><span class="size-2 rounded-full bg-coral"></span><span class="size-2 rounded-full bg-gold"></span><span class="size-2 rounded-full bg-accent"></span></div>
+            </div>
+            <div class="grid gap-4 rounded-3 bg-surface p-6 shadow-inset">
+              <div class="flex items-start justify-between gap-4">
+                <div class="grid gap-2"><span class="text-xs font-bold uppercase tracking-wide text-violet">Live composition</span><h2 class="text-2xl font-black">Creator plan</h2></div>
+                <span class="rounded-full bg-accent-soft px-3 py-1 text-xs font-bold text-accent-dark">Popular</span>
+              </div>
+              <p class="text-sm leading-relaxed text-muted">Mỗi chi tiết bên dưới là kết quả của nhiều atom nhỏ được ghép lại.</p>
+              <div class="flex items-end gap-2 border-y py-4"><strong class="text-4xl font-black">$12</strong><span class="pb-1 text-sm text-muted">/ month</span></div>
+              <ul class="grid gap-3 list-none">
+                <li class="flex items-center gap-3 text-sm"><span class="flex size-6 items-center justify-center rounded-full bg-accent-soft text-accent-dark" aria-hidden="true">✓</span>Unlimited atoms</li>
+                <li class="flex items-center gap-3 text-sm"><span class="flex size-6 items-center justify-center rounded-full bg-accent-soft text-accent-dark" aria-hidden="true">✓</span>Shared token scale</li>
+                <li class="flex items-center gap-3 text-sm"><span class="flex size-6 items-center justify-center rounded-full bg-accent-soft text-accent-dark" aria-hidden="true">✓</span>Responsive variants</li>
+              </ul>
+              <button class="w-full cursor-pointer rounded-2 border-0 bg-accent px-5 py-3 font-black text-ink transition hover:lift focus:ring" type="button">Start composing</button>
+            </div>
+            <div class="flex flex-wrap gap-2 px-2 pt-1"><code class="rounded-1 bg-ink-soft px-2 py-1 text-xs text-accent">grid</code><code class="rounded-1 bg-ink-soft px-2 py-1 text-xs text-accent">gap-4</code><code class="rounded-1 bg-ink-soft px-2 py-1 text-xs text-accent">p-6</code><code class="rounded-1 bg-ink-soft px-2 py-1 text-xs text-accent">rounded-3</code></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="principles" class="container grid gap-10 py-16 md:py-24">
+        <div class="grid max-w-xl gap-4"><span class="text-xs font-bold uppercase tracking-wide text-violet">01 · Principles</span><h2 class="text-3xl font-black tracking-tight sm:text-4xl">A tiny vocabulary with a large range.</h2><p class="text-lg leading-relaxed text-muted">Ba nguyên tắc giữ cho utility system nhỏ, dễ học và không trôi khỏi design system.</p></div>
+        <div class="grid gap-4 md:grid-cols-3">
+          <article class="grid gap-5 rounded-3 border bg-surface p-6 shadow-sm transition hover:lift hover:border-accent">
+            <div class="flex size-12 items-center justify-center rounded-2 bg-accent font-black">01</div>
+            <div class="grid gap-2"><h3 class="text-xl font-black">Single purpose</h3><p class="leading-relaxed text-muted">Một atom chỉ giải quyết một trách nhiệm để có thể tái sử dụng ở mọi ngữ cảnh.</p></div>
+            <code class="w-fit rounded-1 bg-code px-2 py-1 text-xs text-code">.p-6 { padding: var(--space-6); }</code>
+          </article>
+          <article class="grid gap-5 rounded-3 border bg-surface p-6 shadow-sm transition hover:lift hover:border-accent">
+            <div class="flex size-12 items-center justify-center rounded-2 bg-violet text-white font-black">02</div>
+            <div class="grid gap-2"><h3 class="text-xl font-black">Token driven</h3><p class="leading-relaxed text-muted">Các giá trị màu, khoảng cách và bo góc đều đến từ một thang token hữu hạn.</p></div>
+            <div class="flex items-end gap-2 h-8" aria-label="Thang spacing token"><span class="w-4 h-2 rounded-full bg-violet-soft"></span><span class="w-8 h-3 rounded-full bg-violet-soft"></span><span class="w-12 h-4 rounded-full bg-violet"></span><span class="w-16 h-6 rounded-full bg-ink"></span></div>
+          </article>
+          <article class="grid gap-5 rounded-3 border bg-surface p-6 shadow-sm transition hover:lift hover:border-accent">
+            <div class="flex size-12 items-center justify-center rounded-2 bg-coral text-white font-black">03</div>
+            <div class="grid gap-2"><h3 class="text-xl font-black">Variants, not copies</h3><p class="leading-relaxed text-muted">State và breakpoint mở rộng utility gốc mà không tạo component selector mới.</p></div>
+            <div class="flex flex-wrap gap-2"><code class="rounded-full bg-coral-soft px-3 py-1 text-xs font-bold text-coral-dark">hover:lift</code><code class="rounded-full bg-violet-soft px-3 py-1 text-xs font-bold text-violet">md:grid-cols-3</code></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="playground" class="border-y bg-ink text-white">
+        <div class="container grid gap-10 py-16 md:py-24">
+          <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div class="grid max-w-xl gap-4"><span class="text-xs font-bold uppercase tracking-wide text-accent">02 · Playground</span><h2 class="text-3xl font-black tracking-tight sm:text-4xl">Same atoms. Different outcomes.</h2><p class="text-lg leading-relaxed text-ink-muted">Ba khối bên dưới chỉ tái tổ hợp cùng vocabulary về layout, spacing, color và type.</p></div>
+            <span class="w-fit rounded-full border border-ink-soft px-4 py-2 text-xs font-bold text-ink-muted">No component CSS</span>
+          </div>
+          <div class="grid gap-4 lg:grid-cols-4">
+            <article class="grid gap-6 rounded-3 bg-violet p-6 shadow-md lg:col-span-2">
+              <div class="flex items-start justify-between gap-4"><div class="grid gap-2"><span class="text-xs font-bold uppercase tracking-wide text-violet-pale">Weekly output</span><strong class="text-4xl font-black">84 atoms</strong></div><span class="rounded-full bg-white-soft px-3 py-1 text-xs font-bold">+18%</span></div>
+              <div class="flex h-32 items-end gap-2" aria-label="Biểu đồ output theo ngày"><span class="grow h-8 rounded-top bg-violet-pale opacity-40"></span><span class="grow h-12 rounded-top bg-violet-pale opacity-50"></span><span class="grow h-16 rounded-top bg-violet-pale opacity-60"></span><span class="grow h-10 rounded-top bg-violet-pale opacity-50"></span><span class="grow h-24 rounded-top bg-accent"></span><span class="grow h-20 rounded-top bg-violet-pale opacity-80"></span><span class="grow h-28 rounded-top bg-white"></span></div>
+              <div class="flex justify-between text-xs font-semibold text-violet-pale"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+            </article>
+            <article class="flex flex-col justify-between gap-8 rounded-3 bg-accent p-6 text-ink shadow-md">
+              <div class="flex items-center justify-between"><span class="text-xs font-bold uppercase tracking-wide">Coverage</span><span class="flex size-8 items-center justify-center rounded-full bg-ink text-white" aria-hidden="true">↗</span></div>
+              <div class="grid gap-3"><strong class="text-5xl font-black">92%</strong><div class="h-2 overflow-hidden rounded-full bg-accent-dark-soft"><span class="block h-full w-11-12 rounded-full bg-ink"></span></div><p class="text-sm font-semibold leading-relaxed">UI covered by the shared utility vocabulary.</p></div>
+            </article>
+            <article class="grid gap-6 rounded-3 bg-surface p-6 text-ink shadow-md">
+              <div class="flex items-center justify-between"><span class="text-xs font-bold uppercase tracking-wide text-muted">Token health</span><span class="size-3 rounded-full bg-accent pulse" aria-label="Healthy"></span></div>
+              <div class="grid gap-4"><div class="flex items-center justify-between border-b pb-3"><span class="text-sm text-muted">Colors</span><strong>12</strong></div><div class="flex items-center justify-between border-b pb-3"><span class="text-sm text-muted">Spacing</span><strong>8</strong></div><div class="flex items-center justify-between border-b pb-3"><span class="text-sm text-muted">Radii</span><strong>4</strong></div><div class="flex items-center justify-between"><span class="text-sm text-muted">Shadows</span><strong>3</strong></div></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="workflow" class="container grid gap-10 py-16 md:py-24">
+        <div class="grid max-w-xl gap-4"><span class="text-xs font-bold uppercase tracking-wide text-coral-dark">03 · Workflow</span><h2 class="text-3xl font-black tracking-tight sm:text-4xl">Compose in three moves.</h2><p class="text-lg leading-relaxed text-muted">Đi từ cấu trúc đến nhịp điệu rồi mới thêm skin và variants.</p></div>
+        <ol class="grid gap-4 list-none md:grid-cols-3">
+          <li class="grid gap-4 border-t-2 border-ink pt-5"><div class="flex items-center justify-between"><strong class="text-lg">Layout</strong><span class="text-xs font-bold text-muted">STEP 01</span></div><p class="leading-relaxed text-muted">Chọn flow bằng `grid`, `flex`, alignment và responsive columns.</p><div class="flex flex-wrap gap-2"><code class="rounded-full bg-violet-soft px-3 py-1 text-xs font-bold text-violet">grid</code><code class="rounded-full bg-violet-soft px-3 py-1 text-xs font-bold text-violet">items-center</code><code class="rounded-full bg-violet-soft px-3 py-1 text-xs font-bold text-violet">md:grid-cols-3</code></div></li>
+          <li class="grid gap-4 border-t-2 border-violet pt-5"><div class="flex items-center justify-between"><strong class="text-lg">Rhythm</strong><span class="text-xs font-bold text-muted">STEP 02</span></div><p class="leading-relaxed text-muted">Áp dụng spacing scale để tạo nhịp điệu nhất quán giữa các vùng.</p><div class="flex flex-wrap gap-2"><code class="rounded-full bg-violet-soft px-3 py-1 text-xs font-bold text-violet">gap-4</code><code class="rounded-full bg-violet-soft px-3 py-1 text-xs font-bold text-violet">p-6</code><code class="rounded-full bg-violet-soft px-3 py-1 text-xs font-bold text-violet">py-16</code></div></li>
+          <li class="grid gap-4 border-t-2 border-accent pt-5"><div class="flex items-center justify-between"><strong class="text-lg">Skin</strong><span class="text-xs font-bold text-muted">STEP 03</span></div><p class="leading-relaxed text-muted">Hoàn thiện bằng color, type, radius, shadow và interaction variants.</p><div class="flex flex-wrap gap-2"><code class="rounded-full bg-violet-soft px-3 py-1 text-xs font-bold text-violet">bg-surface</code><code class="rounded-full bg-violet-soft px-3 py-1 text-xs font-bold text-violet">rounded-3</code><code class="rounded-full bg-violet-soft px-3 py-1 text-xs font-bold text-violet">hover:lift</code></div></li>
+        </ol>
+        <div class="grid gap-4 rounded-4 border bg-surface p-5 shadow-sm md:grid-cols-2 md:p-8">
+          <div class="grid content-start gap-4"><span class="text-xs font-bold uppercase tracking-wide text-violet">Markup is the recipe</span><h3 class="text-2xl font-black">Readable through constraints</h3><p class="leading-relaxed text-muted">Chuỗi class dài vẫn dễ quét khi vocabulary nhỏ, thứ tự nhóm nhất quán và mọi giá trị đều đến từ token.</p></div>
+          <pre class="overflow-auto rounded-3 bg-code p-5 text-sm leading-relaxed text-code"><code>&lt;article class="grid gap-4 p-6
+  bg-surface border rounded-3
+  shadow-sm transition
+  hover:lift"&gt;
+  ...
+&lt;/article&gt;</code></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t bg-surface">
+      <div class="container flex flex-col justify-between gap-4 py-8 sm:flex-row sm:items-center"><p class="text-sm text-muted">Atomic CSS playground · Built from reusable atoms.</p><a class="text-sm font-bold text-ink underline-offset no-underline hover:underline focus:ring" href="#top">Back to top ↑</a></div>
+    </footer>
+  </body>
+</html>

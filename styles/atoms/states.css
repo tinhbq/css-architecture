@@ -1,0 +1,9 @@
+.hover\:bg-ink:hover { background-color: var(--color-ink); }
+.hover\:text-white:hover { color: #fff; }
+.hover\:border-accent:hover { border-color: var(--color-accent); }
+.hover\:lift:hover { transform: translateY(-0.2rem); }
+.hover\:underline:hover { text-decoration: underline; }
+.focus\:ring:focus-visible {
+  outline: 3px solid rgb(105 86 207 / 0.35);
+  outline-offset: 3px;
+}

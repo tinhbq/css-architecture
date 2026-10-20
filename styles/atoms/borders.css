@@ -1,0 +1,12 @@
+.border-0 { border: 0; }
+.border { border: 1px solid var(--color-line); }
+.border-t { border-top: 1px solid var(--color-line); }
+.border-b { border-bottom: 1px solid var(--color-line); }
+.border-y { border-block: 1px solid var(--color-line); }
+.border-t-2 { border-top-style: solid; border-top-width: 2px; }
+.rounded-1 { border-radius: var(--radius-1); }
+.rounded-2 { border-radius: var(--radius-2); }
+.rounded-3 { border-radius: var(--radius-3); }
+.rounded-4 { border-radius: var(--radius-4); }
+.rounded-full { border-radius: var(--radius-full); }
+.rounded-top { border-radius: var(--radius-1) var(--radius-1) 0 0; }
