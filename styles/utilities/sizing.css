@@ -1,0 +1,16 @@
+.w-fit { width: fit-content; }
+.h-16 { height: 4rem; }
+.h-20 { height: 5rem; }
+.h-24 { height: 6rem; }
+.h-28 { height: 7rem; }
+.h-30 { height: 7.5rem; }
+.h-32 { height: 8rem; }
+.h-36 { height: 9rem; }
+.h-40 { height: 10rem; }
+.size-2 { width: 0.5rem; height: 0.5rem; }
+.size-9 { width: 2.25rem; height: 2.25rem; }
+.size-12 { width: 3rem; height: 3rem; }
+.min-h-screen { min-height: 100vh; }
+.max-w-xl { max-width: var(--max-xl); }
+.max-w-2xl { max-width: var(--max-2xl); }
+.max-w-7xl { max-width: var(--max-7xl); }

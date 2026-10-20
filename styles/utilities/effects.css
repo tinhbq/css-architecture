@@ -1,0 +1,15 @@
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-2xl { box-shadow: var(--shadow-2xl); }
+.opacity-50 { opacity: 0.5; }
+.backdrop-blur { backdrop-filter: blur(16px); }
+.rotate-soft { transform: rotate(1.2deg); }
+.transition { transition: color var(--transition), background-color var(--transition), border-color var(--transition), transform var(--transition); }
+.bg-grid {
+  background-image: linear-gradient(rgb(12 18 32 / 0.05) 1px, transparent 1px), linear-gradient(90deg, rgb(12 18 32 / 0.05) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transition { transition: none; }
+}

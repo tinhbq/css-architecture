@@ -1,0 +1,22 @@
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: clamp(1.875rem, 5vw, 2.25rem); }
+.text-4xl { font-size: clamp(2.25rem, 7vw, 3rem); }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.font-black { font-weight: 900; }
+.leading-none { line-height: 1; }
+.leading-6 { line-height: 1.5rem; }
+.leading-7 { line-height: 1.75rem; }
+.leading-8 { line-height: 2rem; }
+.tracking-tight { letter-spacing: -0.025em; }
+.tracking-tighter { letter-spacing: -0.05em; }
+.tracking-wide { letter-spacing: 0.12em; }
+.uppercase { text-transform: uppercase; }
+.antialiased { -webkit-font-smoothing: antialiased; }
+.no-underline { text-decoration: none; }
+.underline-offset { text-underline-offset: 0.25rem; }

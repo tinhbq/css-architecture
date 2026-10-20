@@ -1,0 +1,19 @@
+.border { border-width: 1px; border-style: solid; }
+.border-t { border-top-width: 1px; border-top-style: solid; }
+.border-b { border-bottom-width: 1px; border-bottom-style: solid; }
+.border-t-2 { border-top-width: 2px; border-top-style: solid; }
+.border-slate-200 { border-color: var(--slate-200); }
+.border-slate-300 { border-color: var(--slate-300); }
+.border-slate-700 { border-color: var(--slate-700); }
+.border-slate-800 { border-color: var(--slate-800); }
+.border-slate-950 { border-color: var(--slate-950); }
+.border-brand { border-color: var(--brand); }
+.border-brand-soft { border-color: var(--brand-soft); }
+.border-violet { border-color: var(--violet); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-2xl { border-radius: var(--radius-2xl); }
+.rounded-3xl { border-radius: var(--radius-3xl); }
+.rounded-full { border-radius: var(--radius-full); }
+.rounded-t { border-radius: var(--radius-md) var(--radius-md) 0 0; }
