@@ -1,0 +1,6 @@
+/* Helpers: single-purpose overrides, intentionally imported last. */
+
+._full-width { inline-size: 100%; }
+._text-accent { color: var(--color-green); }
+._muted { color: var(--color-muted); }
+._push-bottom { margin-block-start: auto; }

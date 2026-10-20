@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Playground RSCSS với components, elements, variants và helpers."
+    />
+    <title>RSCSS Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="inner page-shell">
+        <a class="brand-mark" href="#top" aria-label="Về đầu trang">
+          <span class="mark" aria-hidden="true">R</span>
+          <span class="name">reasonable</span><span class="accent">.css</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Điều hướng chính">
+          <ul class="list cluster-list" role="list">
+            <li><a class="nav-link" href="#rules">Rules</a></li>
+            <li><a class="nav-link" href="#components">Components</a></li>
+            <li><a class="nav-link" href="#composition">Composition</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero-section">
+        <div class="inner page-shell layout-grid -hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Architecture 07 · RSCSS</p>
+            <h1 class="title">Build components.<br /><span class="_text-accent">Keep them reasonable.</span></h1>
+            <p class="description">
+              Một convention nhỏ nhưng rõ: component hai từ, element một từ,
+              variant bắt đầu bằng dấu gạch ngang và helper bắt đầu bằng underscore.
+            </p>
+            <div class="actions cluster-list">
+              <a class="action-button -primary" href="#rules">Học conventions</a>
+              <a class="action-button -secondary" href="#components">Xem component demo</a>
+            </div>
+          </div>
+
+          <div class="naming-demo" aria-label="Cú pháp đặt tên RSCSS">
+            <div class="grid" aria-hidden="true"></div>
+            <div class="name-token -component">
+              <span class="label">Component</span>
+              <code class="value">.session-card</code>
+            </div>
+            <span class="operator" aria-hidden="true">+</span>
+            <div class="name-token -element">
+              <span class="label">Element</span>
+              <code class="value">&gt; .title</code>
+            </div>
+            <span class="operator" aria-hidden="true">+</span>
+            <div class="name-token -variant">
+              <span class="label">Variant</span>
+              <code class="value">.-featured</code>
+            </div>
+            <div class="name-result">
+              <span class="label">Result</span>
+              <code class="value">.session-card &gt; .title</code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section -dark" id="rules">
+        <div class="inner page-shell stack-list -xlarge">
+          <header class="section-heading -light">
+            <p class="eyebrow">01 · Four conventions</p>
+            <h2 class="title">Đọc class.<br />Hiểu quan hệ.</h2>
+            <p class="description">
+              RSCSS ưu tiên conventions dễ nhớ thay vì một hệ thống abstraction
+              lớn. Mỗi tên class cho biết ngay vai trò và phạm vi của nó.
+            </p>
+          </header>
+
+          <div class="layout-grid -rules">
+            <article class="rule-card -component">
+              <span class="number">01</span>
+              <div class="icon" aria-hidden="true">C</div>
+              <h3 class="title">Components</h3>
+              <p class="description">Tên ít nhất hai từ, có ý nghĩa độc lập.</p>
+              <code class="example">.search-form</code>
+            </article>
+
+            <article class="rule-card -element">
+              <span class="number">02</span>
+              <div class="icon" aria-hidden="true">E</div>
+              <h3 class="title">Elements</h3>
+              <p class="description">Tên một từ, scope bằng direct child.</p>
+              <code class="example">&gt; .field</code>
+            </article>
+
+            <article class="rule-card -variant">
+              <span class="number">03</span>
+              <div class="icon" aria-hidden="true">V</div>
+              <h3 class="title">Variants</h3>
+              <p class="description">Thay đổi ngoại hình, trạng thái hoặc hành vi.</p>
+              <code class="example">.-compact</code>
+            </article>
+
+            <article class="rule-card -helper">
+              <span class="number">04</span>
+              <div class="icon" aria-hidden="true">H</div>
+              <h3 class="title">Helpers</h3>
+              <p class="description">Override nhỏ, đơn nhiệm và dễ nhận biết.</p>
+              <code class="example">._full-width</code>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="components">
+        <div class="inner page-shell stack-list -xlarge">
+          <header class="section-heading">
+            <p class="eyebrow">02 · Variants in action</p>
+            <h2 class="title">Một component.<br />Ba biến thể.</h2>
+            <p class="description">
+              Mỗi card giữ nguyên element API. Variant chỉ đổi custom properties
+              của component nên selector vẫn ngắn và predictable.
+            </p>
+          </header>
+
+          <div class="session-grid">
+            <article class="session-card">
+              <span class="badge">Foundation</span>
+              <span class="number">01</span>
+              <p class="eyebrow">09:00 · Studio A</p>
+              <h3 class="title">Reasonable components</h3>
+              <p class="description">
+                Nhận diện ranh giới component và đặt tên có thể hiểu ngay.
+              </p>
+              <div class="profile-chip _push-bottom">
+                <span class="avatar" aria-hidden="true">AN</span>
+                <strong class="name">An Nguyễn</strong>
+                <small class="role">CSS Engineer</small>
+              </div>
+              <a class="action-button -secondary _full-width" href="#top">View details</a>
+            </article>
+
+            <article class="session-card -featured">
+              <span class="badge -live">Live now</span>
+              <span class="number">02</span>
+              <p class="eyebrow">10:30 · Main stage</p>
+              <h3 class="title">RSCSS in practice</h3>
+              <p class="description">
+                Component, element, variant và helper cùng hoạt động trong UI thật.
+              </p>
+              <div class="profile-chip -inverse _push-bottom">
+                <span class="avatar" aria-hidden="true">BT</span>
+                <strong class="name">Bình Trần</strong>
+                <small class="role">Frontend Lead</small>
+              </div>
+              <a class="action-button -light _full-width" href="#top">Join session</a>
+            </article>
+
+            <article class="session-card -dark">
+              <span class="badge -advanced">Advanced</span>
+              <span class="number">03</span>
+              <p class="eyebrow">14:00 · Lab 02</p>
+              <h3 class="title">Nested components</h3>
+              <p class="description">
+                Tách phần tái sử dụng thành component riêng thay vì element lồng sâu.
+              </p>
+              <div class="profile-chip -inverse _push-bottom">
+                <span class="avatar" aria-hidden="true">CL</span>
+                <strong class="name">Chi Lê</strong>
+                <small class="role">Design Systems</small>
+              </div>
+              <a class="action-button -accent _full-width" href="#top">Save a seat</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section -soft" id="composition">
+        <div class="inner page-shell stack-list -xlarge">
+          <header class="section-heading">
+            <p class="eyebrow">03 · Nested composition</p>
+            <h2 class="title">Lồng component,<br />không lồng trách nhiệm.</h2>
+            <p class="description">
+              Schedule board chứa nhiều `schedule-item`; mỗi item vẫn là component
+              độc lập với element và variant riêng.
+            </p>
+          </header>
+
+          <div class="layout-grid -composition">
+            <section class="schedule-board">
+              <header class="board-heading">
+                <p class="eyebrow">Today · Track A</p>
+                <h3 class="title">Component architecture</h3>
+                <span class="count">4 sessions</span>
+              </header>
+              <div class="list stack-list -small">
+                <article class="schedule-item -complete">
+                  <time class="time" datetime="09:00">09:00</time>
+                  <span class="marker" aria-hidden="true">✓</span>
+                  <strong class="title">Naming foundations</strong>
+                  <span class="meta">Completed · Studio A</span>
+                </article>
+                <article class="schedule-item -current">
+                  <time class="time" datetime="10:30">10:30</time>
+                  <span class="marker" aria-hidden="true">●</span>
+                  <strong class="title">RSCSS in practice</strong>
+                  <span class="meta">Live now · Main stage</span>
+                </article>
+                <article class="schedule-item">
+                  <time class="time" datetime="13:00">13:00</time>
+                  <span class="marker" aria-hidden="true">3</span>
+                  <strong class="title">Variants and helpers</strong>
+                  <span class="meta">Upcoming · Studio B</span>
+                </article>
+                <article class="schedule-item">
+                  <time class="time" datetime="14:00">14:00</time>
+                  <span class="marker" aria-hidden="true">4</span>
+                  <strong class="title">Nested components</strong>
+                  <span class="meta">Upcoming · Lab 02</span>
+                </article>
+              </div>
+            </section>
+
+            <aside class="source-panel">
+              <p class="eyebrow">Selector anatomy</p>
+              <div class="list stack-list -small">
+                <div class="selector-row -component">
+                  <span class="type">Component</span>
+                  <code class="selector">.schedule-item</code>
+                </div>
+                <div class="selector-row -element">
+                  <span class="type">Element</span>
+                  <code class="selector">&gt; .title</code>
+                </div>
+                <div class="selector-row -variant">
+                  <span class="type">Variant</span>
+                  <code class="selector">.-current</code>
+                </div>
+                <div class="selector-row -helper">
+                  <span class="type">Helper</span>
+                  <code class="selector">._full-width</code>
+                </div>
+              </div>
+              <div class="note">
+                <span aria-hidden="true">✓</span>
+                <p>Không selector nào cần biết component đang nằm ở section nào.</p>
+              </div>
+            </aside>
+          </div>
+
+          <div class="code-panel">
+            <div class="panel-header">
+              <div class="window-controls" aria-hidden="true">
+                <span class="dot -red"></span>
+                <span class="dot -yellow"></span>
+                <span class="dot -green"></span>
+              </div>
+              <p class="filename">session-card.css</p>
+            </div>
+            <pre class="pre"><code class="source-code"><span class="comment">/* Component */</span>
+.session-card {
+  <span class="comment">/* Direct-child elements */</span>
+  &gt; .title { ... }
+  &gt; .description { ... }
+
+  <span class="comment">/* Variants */</span>
+  &amp;.-featured { ... }
+  &gt; .badge.-live { ... }
+}</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content page-shell">
+        <p class="text">Reasonable components. Obvious relationships. Small conventions.</p>
+        <a class="link" href="#top">Về đầu trang ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

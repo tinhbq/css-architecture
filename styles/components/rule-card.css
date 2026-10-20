@@ -1,0 +1,22 @@
+.rule-card {
+  --rule-color: var(--color-green);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-block-size: 21rem;
+  padding: var(--space-4);
+  border: 1px solid #3b3c42;
+  border-block-start: 0.3rem solid var(--rule-color);
+  border-radius: var(--radius-lg);
+  background: #23242a;
+
+  &.-component { --rule-color: var(--color-green); }
+  &.-element { --rule-color: var(--color-blue); }
+  &.-variant { --rule-color: var(--color-yellow); }
+  &.-helper { --rule-color: var(--color-pink); }
+  > .number { color: var(--rule-color); font-family: var(--font-mono); font-size: 0.68rem; }
+  > .icon { display: grid; place-items: center; inline-size: 3rem; aspect-ratio: 1; border-radius: var(--radius-md); background: var(--rule-color); color: var(--color-ink); font-family: var(--font-mono); font-weight: 500; }
+  > .title { color: white; font-size: 1.3rem; }
+  > .description { color: #aaa9af; }
+  > .example { margin-block-start: auto; color: var(--rule-color); font-size: 0.75rem; }
+}

@@ -1,0 +1,4 @@
+.page-shell {
+  inline-size: min(calc(100% - 2rem), var(--content-width));
+  margin-inline: auto;
+}
