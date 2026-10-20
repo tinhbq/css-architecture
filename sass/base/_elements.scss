@@ -1,0 +1,27 @@
+@use "../abstracts/functions" as fn;
+
+body {
+  background: fn.color("canvas");
+  color: fn.color("ink");
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+  outline: 0.2rem solid fn.color("pink");
+  outline-offset: 0.25rem;
+}
+
+::selection {
+  background: fn.color("lime");
+  color: fn.color("ink");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

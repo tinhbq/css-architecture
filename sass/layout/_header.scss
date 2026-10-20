@@ -1,0 +1,51 @@
+@use "../abstracts/functions" as fn;
+@use "../abstracts/mixins" as mx;
+
+.site-header {
+  border-block-end: 1px solid fn.color("line");
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-block-size: 5.5rem;
+  }
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: fn.space(2);
+  font-weight: 800;
+  text-decoration: none;
+
+  &__mark {
+    display: grid;
+    place-items: center;
+    inline-size: 2.25rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: fn.color("pink");
+    color: white;
+    font-family: "DM Mono", monospace;
+  }
+
+  &__name { letter-spacing: -0.02em; }
+  &__accent { color: fn.color("pink"); }
+}
+
+.site-nav {
+  &__list { padding: 0; list-style: none; }
+  &__link {
+    color: fn.color("muted");
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover { color: fn.color("pink"); }
+  }
+}
+
+@include mx.respond("small") {
+  .site-nav { display: none; }
+}

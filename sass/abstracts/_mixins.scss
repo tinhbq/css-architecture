@@ -1,0 +1,21 @@
+@use "sass:map";
+@use "variables" as v;
+@use "functions" as fn;
+
+@mixin container {
+  inline-size: min(calc(100% - 2rem), v.$content-width);
+  margin-inline: auto;
+}
+
+@mixin respond($breakpoint) {
+  @media (width < map.get(v.$breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: fn.rem(3) solid fn.color("pink");
+    outline-offset: fn.rem(4);
+  }
+}

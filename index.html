@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Playground thực hành kiến trúc Sass 7–1 Pattern với modern @use."
+    />
+    <title>Sass 7–1 Pattern Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body class="t-default">
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="#top" aria-label="Về đầu trang">
+          <span class="brand__mark" aria-hidden="true">S</span>
+          <span class="brand__name">sass<span class="brand__accent">/7–1</span></span>
+        </a>
+
+        <nav class="site-nav" aria-label="Điều hướng chính">
+          <ul class="cluster site-nav__list" role="list">
+            <li><a class="site-nav__link" href="#folders">Folders</a></li>
+            <li><a class="site-nav__link" href="#flow">Build flow</a></li>
+            <li><a class="site-nav__link" href="#demo">Demo</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="home-hero">
+        <div class="container grid grid--hero home-hero__inner">
+          <div class="stack stack--large home-hero__content">
+            <p class="home-hero__eyebrow">Architecture 06 · Sass 7–1 Pattern</p>
+            <h1 class="home-hero__title">
+              Seven folders.<br /><span class="home-hero__accent">One clear entry.</span>
+            </h1>
+            <p class="home-hero__description">
+              Chia SCSS theo trách nhiệm, khai báo dependency bằng modern
+              <code>@use</code> và build mọi thứ qua một `main.scss` duy nhất.
+            </p>
+            <div class="cluster home-hero__actions">
+              <a class="button button--primary" href="#folders">Khám phá cấu trúc</a>
+              <a class="button button--secondary" href="#flow">Theo dõi build flow</a>
+            </div>
+          </div>
+
+          <div class="terminal" aria-label="Cây thư mục Sass 7–1">
+            <div class="terminal__bar">
+              <span class="terminal__dot terminal__dot--red"></span>
+              <span class="terminal__dot terminal__dot--yellow"></span>
+              <span class="terminal__dot terminal__dot--green"></span>
+              <p class="terminal__title">sass/</p>
+            </div>
+            <div class="terminal__body">
+              <p class="terminal__line"><span>├──</span> <strong>abstracts/</strong> <em>API only</em></p>
+              <p class="terminal__line"><span>├──</span> <strong>vendors/</strong> <em>third-party</em></p>
+              <p class="terminal__line"><span>├──</span> <strong>base/</strong> <em>foundations</em></p>
+              <p class="terminal__line"><span>├──</span> <strong>layout/</strong> <em>large regions</em></p>
+              <p class="terminal__line"><span>├──</span> <strong>components/</strong> <em>reusable UI</em></p>
+              <p class="terminal__line"><span>├──</span> <strong>pages/</strong> <em>page scope</em></p>
+              <p class="terminal__line"><span>├──</span> <strong>themes/</strong> <em>visual identity</em></p>
+              <p class="terminal__line terminal__line--entry"><span>└──</span> <strong>main.scss</strong> <em>single entry</em></p>
+              <p class="terminal__command"><span>$</span> npm run build:css<span class="terminal__cursor">_</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--dark" id="folders">
+        <div class="container stack stack--xlarge">
+          <header class="section-heading section-heading--light">
+            <div class="stack stack--small">
+              <p class="section-heading__eyebrow">01 · Seven directories</p>
+              <h2 class="section-heading__title">Mỗi partial có đúng một nơi.</h2>
+            </div>
+            <p class="section-heading__description">
+              Tìm file theo trách nhiệm thay vì theo lịch sử dự án. Khi component
+              tăng lên, cấu trúc vẫn dễ đoán và dễ review.
+            </p>
+          </header>
+
+          <div class="grid grid--folders">
+            <article class="folder-card folder-card--abstracts">
+              <div class="folder-card__header">
+                <span class="folder-card__number">01</span>
+                <span class="folder-card__output">no CSS output</span>
+              </div>
+              <div class="stack stack--small folder-card__content">
+                <h3 class="folder-card__title">abstracts/</h3>
+                <p class="folder-card__description">Variables, functions và mixins dùng chung.</p>
+              </div>
+              <code class="folder-card__file">_mixins.scss</code>
+            </article>
+
+            <article class="folder-card folder-card--vendors">
+              <div class="folder-card__header">
+                <span class="folder-card__number">02</span>
+                <span class="folder-card__output">external</span>
+              </div>
+              <div class="stack stack--small folder-card__content">
+                <h3 class="folder-card__title">vendors/</h3>
+                <p class="folder-card__description">Ranh giới cho stylesheet bên thứ ba.</p>
+              </div>
+              <code class="folder-card__file">_index.scss</code>
+            </article>
+
+            <article class="folder-card folder-card--base">
+              <div class="folder-card__header">
+                <span class="folder-card__number">03</span>
+                <span class="folder-card__output">foundation</span>
+              </div>
+              <div class="stack stack--small folder-card__content">
+                <h3 class="folder-card__title">base/</h3>
+                <p class="folder-card__description">Reset, typography và element defaults.</p>
+              </div>
+              <code class="folder-card__file">_reset.scss</code>
+            </article>
+
+            <article class="folder-card folder-card--layout">
+              <div class="folder-card__header">
+                <span class="folder-card__number">04</span>
+                <span class="folder-card__output">structure</span>
+              </div>
+              <div class="stack stack--small folder-card__content">
+                <h3 class="folder-card__title">layout/</h3>
+                <p class="folder-card__description">Container, header, section và footer.</p>
+              </div>
+              <code class="folder-card__file">_grid.scss</code>
+            </article>
+
+            <article class="folder-card folder-card--components">
+              <div class="folder-card__header">
+                <span class="folder-card__number">05</span>
+                <span class="folder-card__output">reusable UI</span>
+              </div>
+              <div class="stack stack--small folder-card__content">
+                <h3 class="folder-card__title">components/</h3>
+                <p class="folder-card__description">Button, card, terminal và code panel.</p>
+              </div>
+              <code class="folder-card__file">_buttons.scss</code>
+            </article>
+
+            <article class="folder-card folder-card--pages">
+              <div class="folder-card__header">
+                <span class="folder-card__number">06</span>
+                <span class="folder-card__output">page scope</span>
+              </div>
+              <div class="stack stack--small folder-card__content">
+                <h3 class="folder-card__title">pages/</h3>
+                <p class="folder-card__description">Composition chỉ dành cho trang home.</p>
+              </div>
+              <code class="folder-card__file">_home.scss</code>
+            </article>
+
+            <article class="folder-card folder-card--themes">
+              <div class="folder-card__header">
+                <span class="folder-card__number">07</span>
+                <span class="folder-card__output">identity</span>
+              </div>
+              <div class="stack stack--small folder-card__content">
+                <h3 class="folder-card__title">themes/</h3>
+                <p class="folder-card__description">Runtime tokens cho màu và surface.</p>
+              </div>
+              <code class="folder-card__file">_default.scss</code>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="flow">
+        <div class="container stack stack--xlarge">
+          <header class="section-heading">
+            <div class="stack stack--small">
+              <p class="section-heading__eyebrow">02 · Compilation flow</p>
+              <h2 class="section-heading__title">Partial đi vào.<br />Một CSS đi ra.</h2>
+            </div>
+            <p class="section-heading__description">
+              `main.scss` kiểm soát thứ tự tổng hợp. Browser chỉ nhận file CSS đã
+              build và không cần biết source được chia thành bao nhiêu partial.
+            </p>
+          </header>
+
+          <div class="pipeline">
+            <div class="pipeline__sources">
+              <div class="pipeline__source pipeline__source--api">abstracts</div>
+              <div class="pipeline__source">vendors</div>
+              <div class="pipeline__source">base</div>
+              <div class="pipeline__source">layout</div>
+              <div class="pipeline__source">components</div>
+              <div class="pipeline__source">pages</div>
+              <div class="pipeline__source">themes</div>
+            </div>
+            <div class="pipeline__arrow" aria-hidden="true">→</div>
+            <div class="pipeline__compiler">
+              <span class="pipeline__compiler-icon" aria-hidden="true">S</span>
+              <div>
+                <strong class="pipeline__compiler-title">main.scss</strong>
+                <p class="pipeline__compiler-meta">Dart Sass compiler</p>
+              </div>
+            </div>
+            <div class="pipeline__arrow" aria-hidden="true">→</div>
+            <div class="pipeline__output">
+              <span class="pipeline__output-icon" aria-hidden="true">CSS</span>
+              <div>
+                <strong class="pipeline__output-title">styles/main.css</strong>
+                <p class="pipeline__output-meta">Browser-ready output</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="code-panel">
+            <div class="code-panel__header">
+              <div class="code-panel__dots" aria-hidden="true">
+                <span class="code-panel__dot code-panel__dot--red"></span>
+                <span class="code-panel__dot code-panel__dot--yellow"></span>
+                <span class="code-panel__dot code-panel__dot--green"></span>
+              </div>
+              <p class="code-panel__filename">sass/main.scss</p>
+            </div>
+            <pre class="code-panel__pre"><code class="code-panel__code"><span class="code-panel__comment">// Dependencies are explicit and namespaced</span>
+@use <span class="code-panel__value">"abstracts/variables"</span>;
+@use <span class="code-panel__value">"base/reset"</span>;
+@use <span class="code-panel__value">"layout/grid"</span>;
+@use <span class="code-panel__value">"components/buttons"</span>;
+@use <span class="code-panel__value">"pages/home"</span>;
+@use <span class="code-panel__value">"themes/default"</span>;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--soft" id="demo">
+        <div class="container stack stack--xlarge">
+          <header class="section-heading">
+            <div class="stack stack--small">
+              <p class="section-heading__eyebrow">03 · Component lab</p>
+              <h2 class="section-heading__title">Kiến trúc hiện diện trong UI.</h2>
+            </div>
+            <p class="section-heading__description">
+              Layout đặt component vào grid, component sở hữu skin, page quyết
+              định composition và theme cấp runtime tokens.
+            </p>
+          </header>
+
+          <div class="grid grid--demo">
+            <article class="project-card project-card--featured">
+              <div class="project-card__header">
+                <span class="project-card__icon" aria-hidden="true">7</span>
+                <div class="project-card__identity">
+                  <span class="badge badge--active">Architecture ready</span>
+                  <h3 class="project-card__title">Frontend Foundations</h3>
+                </div>
+                <button class="icon-button" type="button" aria-label="Mở menu">•••</button>
+              </div>
+              <p class="project-card__description">
+                Một source tree dự đoán được cho team đang phát triển nhanh.
+              </p>
+              <div class="project-card__stats">
+                <div class="metric">
+                  <strong class="metric__value">7</strong>
+                  <span class="metric__label">directories</span>
+                </div>
+                <div class="metric">
+                  <strong class="metric__value">18</strong>
+                  <span class="metric__label">partials</span>
+                </div>
+                <div class="metric">
+                  <strong class="metric__value">1</strong>
+                  <span class="metric__label">entrypoint</span>
+                </div>
+              </div>
+              <div class="progress-bar" aria-label="Architecture setup hoàn thành 86%">
+                <span class="progress-bar__value"></span>
+              </div>
+              <div class="cluster project-card__footer">
+                <span class="project-card__meta">Last build · 2m ago</span>
+                <a class="button button--theme" href="#top">Open project</a>
+              </div>
+            </article>
+
+            <aside class="source-inspector">
+              <p class="source-inspector__eyebrow">Responsibility map</p>
+              <div class="stack source-inspector__list">
+                <div class="source-inspector__row">
+                  <code class="source-inspector__file">layout/_grid.scss</code>
+                  <span class="source-inspector__role">placement</span>
+                </div>
+                <div class="source-inspector__row">
+                  <code class="source-inspector__file">components/_cards.scss</code>
+                  <span class="source-inspector__role">visual UI</span>
+                </div>
+                <div class="source-inspector__row">
+                  <code class="source-inspector__file">pages/_home.scss</code>
+                  <span class="source-inspector__role">composition</span>
+                </div>
+                <div class="source-inspector__row">
+                  <code class="source-inspector__file">themes/_default.scss</code>
+                  <span class="source-inspector__role">identity</span>
+                </div>
+              </div>
+              <div class="source-inspector__rule">
+                <span aria-hidden="true">✓</span>
+                <p>Mỗi thay đổi có một nơi rõ ràng để bắt đầu.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p class="site-footer__text">Seven folders. One entrypoint. Predictable Sass.</p>
+        <a class="site-footer__link" href="#top">Về đầu trang ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

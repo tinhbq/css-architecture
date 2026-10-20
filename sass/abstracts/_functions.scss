@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "sass:math";
+@use "variables" as v;
+
+@function color($name) {
+  @return map.get(v.$colors, $name);
+}
+
+@function space($step) {
+  @return map.get(v.$spaces, $step);
+}
+
+@function rem($pixels) {
+  @return math.div($pixels, 16) * 1rem;
+}

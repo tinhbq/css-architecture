@@ -1,0 +1,31 @@
+@use "../abstracts/functions" as fn;
+@use "../abstracts/variables" as v;
+
+.folder-card {
+  --folder-color: #{fn.color("muted")};
+  display: flex;
+  flex-direction: column;
+  gap: fn.space(5);
+  min-block-size: 19rem;
+  padding: fn.space(5);
+  border: 1px solid #3b3941;
+  border-block-start: 0.3rem solid var(--folder-color);
+  border-radius: v.$radius-lg;
+  background: #242229;
+
+  &--abstracts { --folder-color: #{fn.color("pink")}; }
+  &--vendors { --folder-color: #{fn.color("muted")}; }
+  &--base { --folder-color: #{fn.color("lime")}; }
+  &--layout { --folder-color: #{fn.color("cyan")}; }
+  &--components { --folder-color: #{fn.color("violet")}; }
+  &--pages { --folder-color: #ff9d4a; }
+  &--themes { --folder-color: #ff6b9d; }
+  &__header { display: flex; align-items: center; justify-content: space-between; gap: fn.space(3); }
+  &__number, &__output, &__file { font-family: v.$font-mono; font-size: 0.68rem; }
+  &__number { color: var(--folder-color); }
+  &__output { padding: fn.space(1) fn.space(2); border-radius: 999px; background: #302e36; color: #aaa8b2; }
+  &__content { flex: 1; }
+  &__title { color: white; font-size: 1.45rem; }
+  &__description { color: #aaa8b2; }
+  &__file { color: var(--folder-color); }
+}

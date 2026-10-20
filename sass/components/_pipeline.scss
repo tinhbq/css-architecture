@@ -1,0 +1,30 @@
+@use "../abstracts/functions" as fn;
+@use "../abstracts/mixins" as mx;
+@use "../abstracts/variables" as v;
+
+.pipeline {
+  display: grid;
+  grid-template-columns: minmax(14rem, 1fr) auto minmax(12rem, 0.7fr) auto minmax(14rem, 1fr);
+  align-items: center;
+  gap: fn.space(3);
+  padding: fn.space(5);
+  border: 1px solid fn.color("line");
+  border-radius: v.$radius-lg;
+  background: fn.color("surface");
+
+  &__sources { display: grid; grid-template-columns: repeat(2, 1fr); gap: fn.space(1); }
+  &__source { padding: fn.space(2); border-radius: v.$radius-sm; background: fn.color("soft"); font-family: v.$font-mono; font-size: 0.68rem; text-align: center; }
+  &__source--api { border: 1px dashed fn.color("pink"); background: transparent; color: fn.color("pink-dark"); }
+  &__arrow { color: fn.color("pink"); font-size: 1.5rem; }
+  &__compiler, &__output { display: flex; align-items: center; gap: fn.space(3); padding: fn.space(3); border-radius: v.$radius-md; }
+  &__compiler { background: fn.color("pink"); color: white; }
+  &__output { background: fn.color("code"); color: white; }
+  &__compiler-icon, &__output-icon { display: grid; flex: 0 0 auto; place-items: center; inline-size: 2.5rem; aspect-ratio: 1; border-radius: v.$radius-sm; background: rgb(255 255 255 / 15%); font-family: v.$font-mono; font-size: 0.7rem; }
+  &__compiler-title, &__output-title { font-size: 0.78rem; }
+  &__compiler-meta, &__output-meta { color: rgb(255 255 255 / 65%); font-size: 0.62rem; }
+}
+
+@include mx.respond("medium") {
+  .pipeline { grid-template-columns: 1fr; }
+  .pipeline__arrow { transform: rotate(90deg); text-align: center; }
+}

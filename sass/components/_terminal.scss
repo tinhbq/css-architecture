@@ -1,0 +1,25 @@
+@use "../abstracts/functions" as fn;
+@use "../abstracts/variables" as v;
+
+.terminal {
+  overflow: hidden;
+  border: 1px solid #3c3943;
+  border-radius: v.$radius-lg;
+  background: fn.color("code");
+  box-shadow: v.$shadow-card;
+
+  &__bar { display: flex; align-items: center; gap: 0.4rem; min-block-size: 3.25rem; padding-inline: fn.space(4); border-block-end: 1px solid #3c3943; }
+  &__dot { inline-size: 0.65rem; aspect-ratio: 1; border-radius: 50%; }
+  &__dot--red { background: #ff6961; }
+  &__dot--yellow { background: #ffc85b; }
+  &__dot--green { background: #5bcd73; }
+  &__title { margin-inline-start: auto; color: #92909a; font-family: v.$font-mono; font-size: 0.7rem; }
+  &__body { padding: clamp(1.25rem, 4vw, 2.5rem); }
+  &__line { display: grid; grid-template-columns: 2rem 1fr auto; gap: fn.space(2); padding-block: 0.35rem; color: #aaa8b2; font-family: v.$font-mono; font-size: clamp(0.7rem, 1.5vw, 0.85rem); }
+  &__line strong { color: white; }
+  &__line em { color: #706d79; font-style: normal; }
+  &__line--entry strong { color: fn.color("lime"); }
+  &__command { margin-block-start: fn.space(4); color: white; font-family: v.$font-mono; font-size: 0.8rem; }
+  &__command > span:first-child { color: fn.color("pink"); }
+  &__cursor { color: fn.color("lime"); }
+}

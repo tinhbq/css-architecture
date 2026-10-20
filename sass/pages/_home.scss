@@ -1,0 +1,40 @@
+@use "../abstracts/functions" as fn;
+@use "../abstracts/mixins" as mx;
+
+.home-hero {
+  overflow: hidden;
+
+  &__inner { min-block-size: calc(100vh - 5.5rem); padding-block: fn.space(7); }
+  &__content { align-items: flex-start; }
+  &__eyebrow { color: fn.color("pink-dark"); font-family: "DM Mono", monospace; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+  &__title { font-size: clamp(3.4rem, 8vw, 7.5rem); letter-spacing: -0.075em; }
+  &__accent { color: fn.color("pink"); }
+  &__description { max-inline-size: 43rem; color: fn.color("muted"); font-size: clamp(1.05rem, 2vw, 1.3rem); }
+  &__actions { gap: fn.space(2); }
+}
+
+.section { padding-block: fn.space(8); }
+.section--dark { background: fn.color("ink"); color: white; }
+.section--soft { background: fn.color("soft"); }
+
+.section-heading {
+  --heading-eyebrow: #{fn.color("pink-dark")};
+  --heading-description: #{fn.color("muted")};
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+  align-items: end;
+  gap: fn.space(7);
+
+  &--light { --heading-eyebrow: #{fn.color("lime")}; --heading-description: #aaa8b2; }
+  &__eyebrow { color: var(--heading-eyebrow); font-family: "DM Mono", monospace; font-size: 0.75rem; text-transform: uppercase; }
+  &__title { font-size: clamp(2.4rem, 5vw, 4.5rem); letter-spacing: -0.055em; }
+  &__description { color: var(--heading-description); }
+}
+
+@include mx.respond("medium") {
+  .section-heading { grid-template-columns: 1fr; gap: fn.space(4); }
+}
+
+@include mx.respond("small") {
+  .section { padding-block: fn.space(7); }
+}

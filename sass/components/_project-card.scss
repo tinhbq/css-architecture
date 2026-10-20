@@ -1,0 +1,41 @@
+@use "../abstracts/functions" as fn;
+@use "../abstracts/variables" as v;
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: fn.space(4);
+  padding: fn.space(5);
+  border: 1px solid var(--theme-line);
+  border-radius: v.$radius-lg;
+  background: var(--theme-surface);
+  color: var(--theme-text);
+  box-shadow: v.$shadow-card;
+
+  &--featured { border-block-start: 0.35rem solid var(--theme-primary); }
+  &__header { display: flex; align-items: center; gap: fn.space(3); }
+  &__icon { display: grid; flex: 0 0 auto; place-items: center; inline-size: 3.5rem; aspect-ratio: 1; border-radius: v.$radius-md; background: var(--theme-primary); color: var(--theme-on-primary); font-family: v.$font-mono; font-weight: 500; }
+  &__identity { flex: 1; min-inline-size: 0; }
+  &__title { margin-block-start: fn.space(1); font-size: 1.3rem; }
+  &__description, &__meta { color: var(--theme-muted); }
+  &__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: fn.space(2); padding-block: fn.space(4); border-block: 1px solid var(--theme-line); }
+  &__footer { justify-content: space-between; }
+  &__meta { font-size: 0.72rem; }
+}
+
+.badge { display: inline-flex; padding: fn.space(1) fn.space(2); border-radius: 999px; font-family: v.$font-mono; font-size: 0.62rem; text-transform: uppercase; }
+.badge--active { background: var(--theme-soft); color: var(--theme-primary); }
+.metric { display: flex; flex-direction: column; }
+.metric__value { font-size: 1.45rem; }
+.metric__label { color: var(--theme-muted); font-size: 0.65rem; }
+.progress-bar { block-size: 0.55rem; overflow: hidden; border-radius: 999px; background: var(--theme-soft); }
+.progress-bar__value { display: block; inline-size: 86%; block-size: 100%; border-radius: inherit; background: var(--theme-primary); }
+
+.source-inspector { display: flex; flex-direction: column; justify-content: center; gap: fn.space(4); padding: fn.space(5); border-radius: v.$radius-lg; background: fn.color("code"); }
+.source-inspector__eyebrow { color: fn.color("pink"); font-family: v.$font-mono; font-size: 0.68rem; text-transform: uppercase; }
+.source-inspector__list { gap: fn.space(2); }
+.source-inspector__row { display: flex; align-items: center; justify-content: space-between; gap: fn.space(3); padding: fn.space(3); border: 1px solid #3b3943; border-radius: v.$radius-md; background: #29272f; }
+.source-inspector__file { color: white; font-size: 0.7rem; }
+.source-inspector__role { color: #8e8b96; font-size: 0.65rem; }
+.source-inspector__rule { display: flex; align-items: flex-start; gap: fn.space(2); padding: fn.space(3); color: fn.color("lime"); }
+.source-inspector__rule p { color: #aaa8b2; font-size: 0.78rem; }

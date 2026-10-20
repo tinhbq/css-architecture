@@ -1,0 +1,25 @@
+@use "../abstracts/functions" as fn;
+@use "../abstracts/mixins" as mx;
+
+.site-footer {
+  border-block-start: 1px solid fn.color("line");
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: fn.space(4);
+    min-block-size: 7rem;
+  }
+
+  &__text { color: fn.color("muted"); }
+  &__link { color: fn.color("pink-dark"); font-weight: 800; text-decoration: none; }
+}
+
+@include mx.respond("small") {
+  .site-footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}

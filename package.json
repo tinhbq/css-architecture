@@ -1,0 +1,12 @@
+{
+  "name": "sass-7-1-pattern-playground",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "sass --style=expanded --no-source-map sass/main.scss styles/main.css",
+    "watch:css": "sass --watch --style=expanded sass/main.scss styles/main.css"
+  },
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}

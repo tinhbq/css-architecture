@@ -1,0 +1,31 @@
+// 1. Abstracts — Sass API, no CSS output
+@use "abstracts/variables";
+@use "abstracts/functions";
+@use "abstracts/mixins";
+
+// 2. Vendors — third-party boundary
+@use "vendors/index";
+
+// 3. Base — document foundations
+@use "base/reset";
+@use "base/typography";
+@use "base/elements";
+
+// 4. Layout — large-scale structure
+@use "layout/grid";
+@use "layout/header";
+@use "layout/footer";
+
+// 5. Components — reusable UI
+@use "components/buttons";
+@use "components/terminal";
+@use "components/folder-card";
+@use "components/pipeline";
+@use "components/project-card";
+@use "components/code-panel";
+
+// 6. Pages — page-specific composition
+@use "pages/home";
+
+// 7. Themes — runtime visual identity
+@use "themes/default";

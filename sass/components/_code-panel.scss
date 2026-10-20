@@ -1,0 +1,22 @@
+@use "../abstracts/functions" as fn;
+@use "../abstracts/variables" as v;
+
+.code-panel {
+  overflow: hidden;
+  border: 1px solid #3b3943;
+  border-radius: v.$radius-lg;
+  background: fn.color("code");
+  box-shadow: v.$shadow-card;
+
+  &__header { display: flex; align-items: center; min-block-size: 3.25rem; padding-inline: fn.space(4); border-block-end: 1px solid #3b3943; }
+  &__dots { display: flex; gap: 0.4rem; }
+  &__dot { inline-size: 0.65rem; aspect-ratio: 1; border-radius: 50%; }
+  &__dot--red { background: #ff6961; }
+  &__dot--yellow { background: #ffc85b; }
+  &__dot--green { background: #5bcd73; }
+  &__filename { margin-inline-start: auto; color: #92909a; font-family: v.$font-mono; font-size: 0.7rem; }
+  &__pre { overflow-x: auto; padding: clamp(1.25rem, 4vw, 2.5rem); }
+  &__code { color: #f7f5fb; font-size: clamp(0.7rem, 1.5vw, 0.9rem); line-height: 1.9; }
+  &__comment { color: #8d8a96; }
+  &__value { color: fn.color("lime"); }
+}

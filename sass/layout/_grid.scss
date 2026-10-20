@@ -1,0 +1,57 @@
+@use "../abstracts/functions" as fn;
+@use "../abstracts/mixins" as mx;
+
+.container {
+  @include mx.container;
+}
+
+.grid {
+  display: grid;
+  gap: fn.space(4);
+
+  &--hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(22rem, 0.95fr);
+    align-items: center;
+  }
+
+  &--folders {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+
+    > :nth-child(-n + 3) { grid-column: span 2; }
+    > :nth-child(n + 4) { grid-column: span 3; }
+  }
+
+  &--demo {
+    grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.9fr);
+  }
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: fn.space(4);
+
+  &--small { gap: fn.space(2); }
+  &--large { gap: fn.space(5); }
+  &--xlarge { gap: fn.space(7); }
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: fn.space(3);
+}
+
+@include mx.respond("medium") {
+  .grid--hero,
+  .grid--demo {
+    grid-template-columns: 1fr;
+  }
+
+  .grid--folders {
+    grid-template-columns: 1fr;
+
+    > :nth-child(n) { grid-column: auto; }
+  }
+}
