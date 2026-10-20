@@ -1,0 +1,27 @@
+.ActionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 3.1rem;
+  padding-inline: var(--space-4);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+.ActionButton:hover {
+  filter: brightness(0.94);
+  transform: translateY(-0.125rem);
+}
+
+.ActionButton--primary { background: var(--color-lime); color: var(--color-ink); }
+.ActionButton--ghost { border-color: #526fd2; color: white; }
+.ActionButton--secondary { border-color: var(--color-line); color: var(--color-ink); }
+.ActionButton--light { background: white; color: var(--color-blue); }
+.ActionButton--accent { background: var(--color-lime); color: var(--color-ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ActionButton { transition: none; }
+}

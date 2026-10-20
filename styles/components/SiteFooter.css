@@ -1,0 +1,18 @@
+.SiteFooter {
+  border-block-start: 1px solid var(--color-line);
+}
+
+.SiteFooter-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-block-size: 7rem;
+}
+
+.SiteFooter-text { color: var(--color-muted); }
+.SiteFooter-link { color: var(--color-blue); font-weight: 800; text-decoration: none; }
+
+@media (width < 36rem) {
+  .SiteFooter-inner { flex-direction: column; align-items: flex-start; justify-content: center; }
+}

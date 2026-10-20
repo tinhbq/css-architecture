@@ -1,0 +1,19 @@
+.CodePanel {
+  overflow: hidden;
+  border: 1px solid #3b3d44;
+  border-radius: var(--radius-lg);
+  background: var(--color-code);
+  box-shadow: var(--shadow-card);
+}
+
+.CodePanel-header { display: flex; align-items: center; min-block-size: 3.25rem; padding-inline: var(--space-4); border-block-end: 1px solid #3b3d44; }
+.CodePanel-dots { display: flex; gap: 0.4rem; }
+.CodePanel-filename { margin-inline-start: auto; color: #92919a; font-family: var(--font-mono); font-size: 0.7rem; }
+.CodePanel-pre { overflow-x: auto; padding: clamp(1.25rem, 4vw, 2.5rem); }
+.CodePanel-code { color: #f7f5fb; font-size: clamp(0.7rem, 1.5vw, 0.9rem); line-height: 1.9; }
+.CodePanel-comment { color: #8d8c96; }
+
+.WindowDot { inline-size: 0.65rem; aspect-ratio: 1; border-radius: 50%; }
+.WindowDot--red { background: #ff6961; }
+.WindowDot--yellow { background: #ffc85b; }
+.WindowDot--green { background: #5bcd73; }

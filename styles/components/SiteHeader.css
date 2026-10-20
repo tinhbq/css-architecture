@@ -1,0 +1,53 @@
+.SiteHeader {
+  border-block-end: 1px solid var(--color-line);
+}
+
+.SiteHeader-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-block-size: 5.5rem;
+}
+
+.SiteHeader-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.SiteHeader-mark {
+  display: grid;
+  place-items: center;
+  inline-size: 2.25rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-blue);
+  color: white;
+  font-family: var(--font-mono);
+}
+
+.SiteHeader-accent { color: var(--color-blue); }
+
+.SiteHeader-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.SiteHeader-link {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.SiteHeader-link:hover,
+.SiteHeader-link.is-active { color: var(--color-blue); }
+
+@media (width < 38rem) {
+  .SiteHeader-nav { display: none; }
+}

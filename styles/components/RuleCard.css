@@ -1,0 +1,40 @@
+.RuleGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.RuleGrid > :nth-child(-n + 3) { grid-column: span 2; }
+.RuleGrid > :nth-child(n + 4) { grid-column: span 3; }
+
+.RuleCard {
+  --RuleCard-color: var(--color-lime);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-block-size: 20rem;
+  padding: var(--space-4);
+  border: 1px solid #3b3c43;
+  border-block-start: 0.3rem solid var(--RuleCard-color);
+  border-radius: var(--radius-lg);
+  background: #23252b;
+}
+
+.RuleCard--component { --RuleCard-color: var(--color-lime); }
+.RuleCard--descendant { --RuleCard-color: var(--color-cyan); }
+.RuleCard--modifier { --RuleCard-color: var(--color-orange); }
+.RuleCard--state { --RuleCard-color: var(--color-pink); }
+.RuleCard--utility { --RuleCard-color: #a98fff; }
+
+.RuleCard-number,
+.RuleCard-example { color: var(--RuleCard-color); font-family: var(--font-mono); font-size: 0.68rem; }
+.RuleCard-icon { display: grid; place-items: center; inline-size: 3rem; aspect-ratio: 1; border-radius: var(--radius-md); background: var(--RuleCard-color); color: var(--color-ink); font-family: var(--font-mono); font-weight: 500; }
+.RuleCard-title { color: white; font-size: 1.3rem; }
+.RuleCard-description { color: #aaa9b0; }
+.RuleCard-example { margin-block-start: auto; }
+
+@media (width < 56rem) {
+  .RuleGrid { grid-template-columns: 1fr; }
+  .RuleGrid > :nth-child(n) { grid-column: auto; }
+  .RuleCard { min-block-size: auto; }
+}

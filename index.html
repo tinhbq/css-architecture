@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Playground SUIT CSS với components, descendants, modifiers, states và utilities."
+    />
+    <title>SUIT CSS Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="SiteHeader">
+      <div class="PageShell SiteHeader-inner">
+        <a class="SiteHeader-brand" href="#top" aria-label="Về đầu trang">
+          <span class="SiteHeader-mark" aria-hidden="true">S</span>
+          <span>SUIT<span class="SiteHeader-accent">.contract</span></span>
+        </a>
+
+        <nav aria-label="Điều hướng chính">
+          <ul class="SiteHeader-nav" role="list">
+            <li><a class="SiteHeader-link is-active" href="#contract">Contract</a></li>
+            <li><a class="SiteHeader-link" href="#components">Components</a></li>
+            <li><a class="SiteHeader-link" href="#states">States</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="HeroPanel">
+        <div class="PageShell HeroPanel-inner">
+          <div class="HeroPanel-content">
+            <p class="HeroPanel-eyebrow">Architecture 08 · SUIT CSS</p>
+            <h1 class="HeroPanel-title">
+              Every class<br />is a <span class="u-colorAccent">contract.</span>
+            </h1>
+            <p class="HeroPanel-description">
+              Một naming convention tường minh giúp component, variant, state và
+              utility phối hợp mà không làm mất quyền sở hữu style.
+            </p>
+            <div class="HeroPanel-actions">
+              <a class="ActionButton ActionButton--primary" href="#contract">Khám phá contract</a>
+              <a class="ActionButton ActionButton--ghost" href="#components">Xem component demo</a>
+            </div>
+          </div>
+
+          <div class="NameDiagram" aria-label="Cấu trúc tên class SUIT CSS">
+            <div class="NameDiagram-grid" aria-hidden="true"></div>
+            <div class="NameToken NameToken--component">
+              <span class="NameToken-label">Component</span>
+              <code class="NameToken-value">ProductCard</code>
+            </div>
+            <span class="NameDiagram-operator" aria-hidden="true">+</span>
+            <div class="NameToken NameToken--descendant">
+              <span class="NameToken-label">Descendant</span>
+              <code class="NameToken-value">-title</code>
+            </div>
+            <span class="NameDiagram-operator" aria-hidden="true">+</span>
+            <div class="NameToken NameToken--modifier">
+              <span class="NameToken-label">Modifier</span>
+              <code class="NameToken-value">--featured</code>
+            </div>
+            <div class="NameDiagram-result">
+              <span class="NameDiagram-label">Selector</span>
+              <code class="NameDiagram-value">.ProductCard--featured</code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ContentSection ContentSection--dark" id="contract">
+        <div class="PageShell ContentSection-inner">
+          <header class="SectionHeader SectionHeader--light">
+            <p class="SectionHeader-eyebrow">01 · Naming contract</p>
+            <h2 class="SectionHeader-title">Tên class nói rõ vai trò.</h2>
+            <p class="SectionHeader-description">
+              Không cần đoán một class là component, biến thể hay trạng thái. Hình
+              dạng tên chính là API mà HTML và CSS cùng tuân theo.
+            </p>
+          </header>
+
+          <div class="RuleGrid">
+            <article class="RuleCard RuleCard--component">
+              <span class="RuleCard-number">01</span>
+              <span class="RuleCard-icon" aria-hidden="true">C</span>
+              <h3 class="RuleCard-title">Component</h3>
+              <p class="RuleCard-description">PascalCase, độc lập và tái sử dụng.</p>
+              <code class="RuleCard-example">.SearchForm</code>
+            </article>
+
+            <article class="RuleCard RuleCard--descendant">
+              <span class="RuleCard-number">02</span>
+              <span class="RuleCard-icon" aria-hidden="true">D</span>
+              <h3 class="RuleCard-title">Descendant</h3>
+              <p class="RuleCard-description">Một phần thuộc riêng component.</p>
+              <code class="RuleCard-example">.SearchForm-input</code>
+            </article>
+
+            <article class="RuleCard RuleCard--modifier">
+              <span class="RuleCard-number">03</span>
+              <span class="RuleCard-icon" aria-hidden="true">M</span>
+              <h3 class="RuleCard-title">Modifier</h3>
+              <p class="RuleCard-description">Biến thể ổn định của component.</p>
+              <code class="RuleCard-example">.SearchForm--compact</code>
+            </article>
+
+            <article class="RuleCard RuleCard--state">
+              <span class="RuleCard-number">04</span>
+              <span class="RuleCard-icon" aria-hidden="true">S</span>
+              <h3 class="RuleCard-title">State</h3>
+              <p class="RuleCard-description">Tình trạng tạm thời hoặc tương tác.</p>
+              <code class="RuleCard-example">.is-disabled</code>
+            </article>
+
+            <article class="RuleCard RuleCard--utility">
+              <span class="RuleCard-number">05</span>
+              <span class="RuleCard-icon" aria-hidden="true">U</span>
+              <h3 class="RuleCard-title">Utility</h3>
+              <p class="RuleCard-description">Một nhiệm vụ, không phụ thuộc context.</p>
+              <code class="RuleCard-example">.u-sizeFull</code>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ContentSection" id="components">
+        <div class="PageShell ContentSection-inner">
+          <header class="SectionHeader">
+            <p class="SectionHeader-eyebrow">02 · Modifier API</p>
+            <h2 class="SectionHeader-title">Một component.<br />Ba cấu hình.</h2>
+            <p class="SectionHeader-description">
+              Modifier chỉ cấu hình component-scoped custom properties. Descendant
+              đọc các giá trị đó mà không cần selector lồng.
+            </p>
+          </header>
+
+          <div class="ProductGrid">
+            <article class="ProductCard">
+              <span class="ProductCard-badge">Starter</span>
+              <span class="ProductCard-index">01</span>
+              <p class="ProductCard-eyebrow">For small teams</p>
+              <h3 class="ProductCard-title">Component Basics</h3>
+              <p class="ProductCard-description">
+                Naming contract rõ ràng cho UI component đầu tiên.
+              </p>
+              <ul class="ProductCard-features" role="list">
+                <li>Component namespace</li>
+                <li>Descendant ownership</li>
+                <li>Utility helpers</li>
+              </ul>
+              <a class="ActionButton ActionButton--secondary u-sizeFull" href="#top">Start free</a>
+            </article>
+
+            <article class="ProductCard ProductCard--featured is-selected">
+              <span class="ProductCard-badge">Most popular</span>
+              <span class="ProductCard-index">02</span>
+              <p class="ProductCard-eyebrow">For growing products</p>
+              <h3 class="ProductCard-title">SUIT System</h3>
+              <p class="ProductCard-description">
+                Component API hoàn chỉnh với modifier và runtime states.
+              </p>
+              <ul class="ProductCard-features" role="list">
+                <li>Composable components</li>
+                <li>State management</li>
+                <li>Scoped custom properties</li>
+              </ul>
+              <a class="ActionButton ActionButton--light u-sizeFull" href="#top">Choose system</a>
+            </article>
+
+            <article class="ProductCard ProductCard--dark">
+              <span class="ProductCard-badge">Enterprise</span>
+              <span class="ProductCard-index">03</span>
+              <p class="ProductCard-eyebrow">For design systems</p>
+              <h3 class="ProductCard-title">Scale Contract</h3>
+              <p class="ProductCard-description">
+                Quy ước có thể kiểm tra và chia sẻ trên nhiều team.
+              </p>
+              <ul class="ProductCard-features" role="list">
+                <li>Shared conventions</li>
+                <li>Automated validation</li>
+                <li>Architecture support</li>
+              </ul>
+              <a class="ActionButton ActionButton--accent u-sizeFull" href="#top">Contact us</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ContentSection ContentSection--soft" id="states">
+        <div class="PageShell ContentSection-inner">
+          <header class="SectionHeader">
+            <p class="SectionHeader-eyebrow">03 · Runtime states</p>
+            <h2 class="SectionHeader-title">Modifier là cấu hình.<br />State là hiện tại.</h2>
+            <p class="SectionHeader-description">
+              `is-*` thể hiện dữ liệu hoặc tương tác đang xảy ra và có thể thay đổi
+              mà không làm biến dạng API lâu dài của component.
+            </p>
+          </header>
+
+          <div class="StateDemo">
+            <section class="TaskBoard">
+              <header class="TaskBoard-header">
+                <div>
+                  <p class="TaskBoard-eyebrow">Release 2.4</p>
+                  <h3 class="TaskBoard-title">Component migration</h3>
+                </div>
+                <span class="TaskBoard-count">4 tasks</span>
+              </header>
+              <div class="TaskBoard-list">
+                <article class="TaskItem is-complete">
+                  <span class="TaskItem-marker" aria-hidden="true">✓</span>
+                  <div class="TaskItem-body">
+                    <strong class="TaskItem-title">Define component contract</strong>
+                    <span class="TaskItem-meta">Completed · 09:20</span>
+                  </div>
+                  <span class="TaskItem-state">Complete</span>
+                </article>
+                <article class="TaskItem is-current">
+                  <span class="TaskItem-marker" aria-hidden="true">2</span>
+                  <div class="TaskItem-body">
+                    <strong class="TaskItem-title">Migrate ProductCard</strong>
+                    <span class="TaskItem-meta">In progress · 68%</span>
+                  </div>
+                  <span class="TaskItem-state">Current</span>
+                </article>
+                <article class="TaskItem">
+                  <span class="TaskItem-marker" aria-hidden="true">3</span>
+                  <div class="TaskItem-body">
+                    <strong class="TaskItem-title">Document utilities</strong>
+                    <span class="TaskItem-meta">Upcoming</span>
+                  </div>
+                  <span class="TaskItem-state">Queued</span>
+                </article>
+                <article class="TaskItem is-disabled">
+                  <span class="TaskItem-marker" aria-hidden="true">4</span>
+                  <div class="TaskItem-body">
+                    <strong class="TaskItem-title">Enable visual regression</strong>
+                    <span class="TaskItem-meta">Waiting for access</span>
+                  </div>
+                  <span class="TaskItem-state">Blocked</span>
+                </article>
+              </div>
+            </section>
+
+            <aside class="ContractPanel">
+              <p class="ContractPanel-eyebrow">Class contract</p>
+              <div class="ContractPanel-list">
+                <div class="ContractRow ContractRow--component">
+                  <span class="ContractRow-type">Component</span>
+                  <code class="ContractRow-class">TaskItem</code>
+                </div>
+                <div class="ContractRow ContractRow--descendant">
+                  <span class="ContractRow-type">Descendant</span>
+                  <code class="ContractRow-class">TaskItem-title</code>
+                </div>
+                <div class="ContractRow ContractRow--state">
+                  <span class="ContractRow-type">State</span>
+                  <code class="ContractRow-class">is-current</code>
+                </div>
+                <div class="ContractRow ContractRow--utility">
+                  <span class="ContractRow-type">Utility</span>
+                  <code class="ContractRow-class">u-sizeFull</code>
+                </div>
+              </div>
+              <div class="ContractPanel-note">
+                <span aria-hidden="true">✓</span>
+                <p>Mỗi class có thể được phân loại chỉ bằng tên.</p>
+              </div>
+            </aside>
+          </div>
+
+          <div class="CodePanel">
+            <div class="CodePanel-header">
+              <div class="CodePanel-dots" aria-hidden="true">
+                <span class="WindowDot WindowDot--red"></span>
+                <span class="WindowDot WindowDot--yellow"></span>
+                <span class="WindowDot WindowDot--green"></span>
+              </div>
+              <p class="CodePanel-filename">ProductCard.css</p>
+            </div>
+            <pre class="CodePanel-pre"><code class="CodePanel-code"><span class="CodePanel-comment">/* Component-scoped API */</span>
+.ProductCard {
+  --ProductCard-background: var(--color-surface);
+  background: var(--ProductCard-background);
+}
+
+.ProductCard--featured {
+  --ProductCard-background: var(--color-blue);
+}
+
+.ProductCard.is-selected { ... }</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="SiteFooter">
+      <div class="PageShell SiteFooter-inner">
+        <p class="SiteFooter-text">Explicit contracts. Predictable components. Composable utilities.</p>
+        <a class="SiteFooter-link" href="#top">Về đầu trang ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

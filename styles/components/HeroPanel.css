@@ -1,0 +1,116 @@
+.HeroPanel {
+  overflow: hidden;
+  background: var(--color-blue);
+  color: white;
+}
+
+.HeroPanel-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(22rem, 0.95fr);
+  align-items: center;
+  gap: var(--space-7);
+  min-block-size: calc(100vh - 5.5rem);
+  padding-block: var(--space-7);
+}
+
+.HeroPanel-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.HeroPanel-eyebrow {
+  color: var(--color-lime);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.HeroPanel-title {
+  font-size: clamp(3.4rem, 8vw, 7.5rem);
+  letter-spacing: -0.075em;
+}
+
+.HeroPanel-description {
+  max-inline-size: 43rem;
+  color: rgb(255 255 255 / 72%);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.HeroPanel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.NameDiagram {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  min-block-size: 36rem;
+  padding: var(--space-5);
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 25%);
+  border-radius: var(--radius-lg);
+  background: rgb(21 36 118 / 35%);
+}
+
+.NameDiagram-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.13;
+  background-image: linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px);
+  background-size: 2rem 2rem;
+}
+
+.NameDiagram-result {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  inline-size: min(100%, 23rem);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.NameDiagram-operator { position: relative; color: var(--color-lime); font-family: var(--font-mono); font-size: 1.2rem; }
+
+.NameDiagram-result {
+  margin-block-start: var(--space-2);
+  border: 1px dashed rgb(255 255 255 / 45%);
+  color: white;
+}
+
+.NameDiagram-result > .NameDiagram-label { font-size: 0.68rem; font-weight: 800; text-transform: uppercase; }
+.NameDiagram-result > .NameDiagram-value { font-size: 0.8rem; }
+
+.NameToken {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  inline-size: min(100%, 23rem);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.NameToken--component { align-self: flex-start; background: var(--color-lime); color: var(--color-ink); transform: rotate(-2deg); }
+.NameToken--descendant { align-self: flex-end; background: var(--color-cyan); color: var(--color-ink); transform: rotate(2deg); }
+.NameToken--modifier { align-self: flex-start; background: var(--color-orange); color: var(--color-ink); transform: rotate(-1deg); }
+.NameToken-label { font-size: 0.68rem; font-weight: 800; text-transform: uppercase; }
+.NameToken-value { font-size: 0.8rem; }
+
+@media (width < 58rem) {
+  .HeroPanel-inner { grid-template-columns: 1fr; }
+  .NameDiagram { inline-size: min(100%, 34rem); margin-inline: auto; }
+}
+
+@media (width < 36rem) {
+  .NameToken { align-self: center; transform: none; }
+}
